@@ -84,26 +84,36 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* RIGHT — phone with floating cards (ChatGPT-mockup style) */}
-            <div className="hidden md:block relative animate-fade-in" style={{ animationDelay: '0.3s' }}>
-              <div className="relative flex items-center justify-center">
-                {/* LEFT floating cards */}
+            {/* RIGHT — phone with floating cards (desktop) / phone alone (mobile) */}
+            <div className="relative animate-fade-in" style={{ animationDelay: '0.3s' }}>
+              {/* DESKTOP: phone surrounded by floating cards */}
+              <div className="hidden lg:flex relative items-center justify-center">
                 <div className="absolute left-0 top-12 z-10 space-y-3 -translate-x-2">
                   <FloatCard emoji="💚" title={t.services.akao.title} sub="Save & contribute toward your goals" delay="0s" iconBg="bg-mint" />
                   <FloatCard emoji="📅" title={t.services.bookings.title} sub="Book services with ease" delay="1s" iconBg="bg-[#F1ECFF]" />
                 </div>
-
-                {/* PHONE — centered */}
                 <PhoneInline />
-
-                {/* RIGHT floating cards */}
                 <div className="absolute right-0 top-4 z-10 space-y-3 translate-x-2">
                   <FloatCard emoji="🛍" title={t.services.marketplace.title} sub="Buy & sell amazing products" delay="0.5s" iconBg="bg-coral" />
                   <FloatCard emoji="🎓" title={t.services.schoolFees.title} sub="Pay tuition instantly" delay="1.5s" iconBg="bg-[#FEF3D7]" />
                   <FloatCard emoji="👥" title={t.services.njangi.title} sub="Build circles, achieve together" delay="2s" iconBg="bg-[#FDE2E4]" />
                 </div>
               </div>
+
+              {/* MOBILE / TABLET: phone centered on its own (cards moved below) */}
+              <div className="lg:hidden flex justify-center">
+                <PhoneInline />
+              </div>
             </div>
+          </div>
+
+          {/* MOBILE-ONLY service preview cards — stacked under phone */}
+          <div className="lg:hidden mt-10 grid grid-cols-2 gap-3">
+            <MobileFeatureCard emoji="💚" title={t.services.akao.title} sub="Save & contribute" iconBg="bg-mint" />
+            <MobileFeatureCard emoji="🛍" title={t.services.marketplace.title} sub="Buy & sell" iconBg="bg-coral" />
+            <MobileFeatureCard emoji="📅" title={t.services.bookings.title} sub="Book services" iconBg="bg-[#F1ECFF]" />
+            <MobileFeatureCard emoji="🎓" title={t.services.schoolFees.title} sub="Pay tuition" iconBg="bg-[#FEF3D7]" />
+            <MobileFeatureCard emoji="👥" title={t.services.njangi.title} sub="Build circles" iconBg="bg-[#FDE2E4]" />
           </div>
 
           {/* WAITLIST inline below hero */}
@@ -219,28 +229,21 @@ export default function HomePage() {
 
           <div className="grid md:grid-cols-[280px_1fr] gap-10 lg:gap-14 items-start">
             <div className="aspect-square rounded-full overflow-hidden shadow-card border-4 border-gold relative bg-green mx-auto md:mx-0 w-full max-w-[280px]">
-              <img src="/founder.jpg" alt="Fabiola Nsuh, founder of Ékié" className="w-full h-full object-cover object-[center_top]" />
+              <img src="/founder.jpg" alt="Fabiola Nsuh, founder of Ékié" className="w-full h-full object-cover" />
             </div>
 
             <div className="space-y-4 text-ink/85 text-[15px] leading-relaxed">
-              <p>I&apos;m <strong className="text-green">Fabiola Nsuh</strong>, founder of Ékié.</p>
-              <p>Growing up, I saw how everyday activities that should have been simple often became stressful and time-consuming. Whether it was managing contribution groups, participating in Njangi circles, paying school fees, supporting loved ones from afar, or finding trusted local services, many families and communities faced the same challenges.</p>
-              <p className="text-ink font-medium">These weren&apos;t just problems I observed — they were experiences I lived.</p>
+              <p>I grew up seeing how everyday financial activities that should be simple often became stressful, time-consuming, and difficult to manage.</p>
+              <p>From contribution groups and Njangi circles, to school fee payments, finding trusted local services, and supporting loved ones from afar, I experienced many of the same challenges faced by families and communities across Cameroon.</p>
               <p>Over the years, I kept asking myself a simple question:</p>
-
-              <blockquote className="my-8 relative">
-                <div className="absolute -left-2 -top-4 text-gold/30 font-display text-7xl leading-none select-none">&ldquo;</div>
-                <p className="font-display text-2xl md:text-3xl text-green italic font-black leading-tight pl-8 border-l-[6px] border-gold">
-                  Why should something so important be so complicated?
-                </p>
+              <blockquote className="font-display text-xl text-green italic font-bold border-l-4 border-gold pl-5 py-2 my-2">
+                Why should something so important be so complicated?
               </blockquote>
-
-              <p>That question stayed with me and eventually became the foundation of Ékié.</p>
-              <p>I envisioned a platform where people could contribute, shop, book services, support education, and manage community activities in one trusted place. A platform built not only around technology, but around the realities of everyday life.</p>
-              <p>Today, Ékié is more than an app. It is a commitment to empowering families, communities, entrepreneurs, and businesses with tools that make life simpler, more connected, and full of opportunity.</p>
-              <p>My hope is that every person who uses Ékié feels supported, empowered, and part of something bigger than a transaction — a community working and growing together.</p>
-              <p className="text-green font-bold text-xl pt-3">Welcome to Ékié.</p>
-              <p className="font-display text-base text-muted italic">— Fabiola Nsuh, Founder &amp; CEO, Ékié</p>
+              <p>That question became the foundation of Ékié.</p>
+              <p>I created Ékié with a vision of bringing everyday community life into one trusted platform — a place where people can contribute, shop, book services, support education, and grow together.</p>
+              <p>Today, Ékié is more than a technology platform. It is a commitment to building tools that make life easier for families, communities, entrepreneurs, and businesses across Cameroon and beyond.</p>
+              <p className="text-green font-bold text-lg pt-3">Welcome to Ékié.</p>
+              <p className="font-display text-base text-muted italic">— Fabiola Nsuh, Founder, Ékié</p>
             </div>
           </div>
         </div>
@@ -311,6 +314,19 @@ function FloatCard({ emoji, title, sub, delay, iconBg }: { emoji: string; title:
     <div className="bg-white rounded-2xl shadow-card border border-border p-3.5 w-44 hover:scale-105 transition-transform animate-float-slow" style={{ animationDelay: delay }}>
       <div className="flex items-center gap-2 mb-1">
         <div className={`w-8 h-8 ${iconBg} rounded-full flex items-center justify-center text-base`}>{emoji}</div>
+        <strong className="text-green text-sm font-bold">{title}</strong>
+      </div>
+      <p className="text-[11px] text-muted leading-tight">{sub}</p>
+    </div>
+  );
+}
+
+// ── Mobile-only stacked service card ─────────────────────────────────────────
+function MobileFeatureCard({ emoji, title, sub, iconBg }: { emoji: string; title: string; sub: string; iconBg: string }) {
+  return (
+    <div className="bg-white rounded-2xl shadow-soft border border-border p-3 hover:scale-105 active:scale-95 transition-transform">
+      <div className="flex items-center gap-2 mb-1">
+        <div className={`w-9 h-9 ${iconBg} rounded-full flex items-center justify-center text-lg`}>{emoji}</div>
         <strong className="text-green text-sm font-bold">{title}</strong>
       </div>
       <p className="text-[11px] text-muted leading-tight">{sub}</p>
