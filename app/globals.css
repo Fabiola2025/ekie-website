@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --green: #0D3B2E;
+  --green-2: #0F4B39;
+  --gold: #D4A937;
+  --cream: #F8F6F1;
+  --mint: #EEF7F2;
+  --coral: #FCE8DF;
+  --ink: #101827;
+  --muted: #667085;
+  --border: #E7E1D7;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--cream);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Atmospheric details */
+.grain::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.4'/%3E%3C/svg%3E");
+  opacity: 0.04;
+  pointer-events: none;
+  mix-blend-mode: multiply;
+}
+
+/* Animated underline link */
+.link-underline {
+  position: relative;
+  display: inline-block;
+}
+.link-underline::after {
+  content: '';
+  position: absolute; left: 0; bottom: -2px;
+  width: 0; height: 2px;
+  background: var(--gold);
+  transition: width 0.35s ease;
+}
+.link-underline:hover::after { width: 100%; }
+
+/* Phone mockup glow */
+.phone-glow {
+  position: relative;
+}
+.phone-glow::before {
+  content: '';
+  position: absolute; inset: -40px;
+  background: radial-gradient(circle, rgba(212,169,55,0.15), transparent 70%);
+  z-index: -1;
+  filter: blur(20px);
+}
+
+/* Form inputs - consistent style */
+.input-base {
+  width: 100%;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 12px 16px;
+  font-size: 14px;
+  color: var(--ink);
+  transition: border-color 0.2s, box-shadow 0.2s;
+  outline: none;
+}
+.input-base:focus {
+  border-color: var(--green);
+  box-shadow: 0 0 0 3px rgba(13,59,46,0.08);
+}
+.input-base::placeholder { color: #98A2B3; }
+
+textarea.input-base { resize: vertical; min-height: 110px; font-family: inherit; }
