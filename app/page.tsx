@@ -229,7 +229,7 @@ export default function HomePage() {
 
           <div className="grid md:grid-cols-[280px_1fr] gap-10 lg:gap-14 items-start">
             <div className="aspect-square rounded-full overflow-hidden shadow-card border-4 border-gold relative bg-green mx-auto md:mx-0 w-full max-w-[280px]">
-              <img src="/founder.jpg" alt="Fabiola Nsuh, founder of Ékié" className="w-full h-full object-cover" />
+              <img src="/founder.jpg" alt="Fabiola Nsuh, founder of Ékié" className="w-full h-full object-cover object-[center_top]" />
             </div>
 
             <div className="space-y-4 text-ink/85 text-[15px] leading-relaxed">
