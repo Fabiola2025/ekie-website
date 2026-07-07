@@ -64,7 +64,7 @@ export default function HomePage() {
                 <a href="#download" className="inline-flex items-center gap-2 bg-green hover:bg-green-2 text-white rounded-full px-6 py-3.5 text-sm font-bold transition-colors shadow-soft">
                   {t.hero.ctaPrimary} <ArrowRight className="w-4 h-4" />
                 </a>
-                <a href="#services" className="inline-flex items-center gap-2 text-ink hover:text-green text-sm font-medium transition-colors group">
+                <a href="/why-ekie" className="inline-flex items-center gap-2 text-ink hover:text-green text-sm font-medium transition-colors group">
                   <span className="w-10 h-10 rounded-full border-2 border-green flex items-center justify-center group-hover:bg-green group-hover:text-white transition-colors">
                     <Play className="w-3.5 h-3.5 fill-current ml-0.5" />
                   </span>
@@ -190,10 +190,10 @@ export default function HomePage() {
       <section className="bg-green py-10">
         <div className="max-w-7xl mx-auto px-6 lg:px-10 grid grid-cols-2 md:grid-cols-4 gap-6 text-center md:text-left">
           {[
-            { num: 'Coming', label: 'Akao plans', icon: '💚' },
-            { num: 'Soon', label: 'Active circles', icon: '👥' },
+            { num: 'Sep 2026', label: 'Launch date', icon: '🚀' },
+            { num: 'Verified', label: 'Every vendor', icon: '✅' },
+            { num: 'Direct', label: 'To source', icon: '🎯' },
             { num: 'Built', label: 'For Cameroon', icon: '🇨🇲' },
-            { num: '24/7', label: 'Support', icon: '⭐' },
           ].map((s) => (
             <div key={s.label} className="flex items-center justify-center md:justify-start gap-3">
               <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center text-xl">{s.icon}</div>
