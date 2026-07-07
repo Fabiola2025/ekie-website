@@ -25,7 +25,8 @@ export default function Footer() {
               <li><Link href="/#marketplace" className="hover:text-gold transition-colors">{t.footer.productLinks.marketplace}</Link></li>
               <li><Link href="/#bookings" className="hover:text-gold transition-colors">{t.footer.productLinks.bookings}</Link></li>
               <li><Link href="/#school-fees" className="hover:text-gold transition-colors">{t.footer.productLinks.schoolFees}</Link></li>
-              <li><Link href="/#njangi" className="hover:text-gold transition-colors">{t.footer.productLinks.njangi}</Link></li>
+              <li><Link href="/#family-support" className="hover:text-gold transition-colors">{t.footer.productLinks.familySupport}</Link></li>
+              <li><Link href="/why-ekie" className="hover:text-gold transition-colors">{t.footer.companyLinks.whyEkie}</Link></li>
             </ul>
           </div>
 

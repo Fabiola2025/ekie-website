@@ -4,17 +4,17 @@ import Nav from '@/components/Nav';
 import Footer from '@/components/Footer';
 import { WaitlistForm, VendorForm, ContactForm } from '@/components/Forms';
 import { useLang } from '@/lib/LanguageProvider';
+import Link from 'next/link';
 
 export default function HomePage() {
   const { t } = useLang();
 
   const serviceCards = [
-    { id: 'akao', emoji: '💚', title: t.services.akao.title, sub: t.services.akao.sub, color: 'bg-mint', accent: 'text-green' },
-    { id: 'marketplace', emoji: '🛒', title: t.services.marketplace.title, sub: t.services.marketplace.sub, color: 'bg-coral', accent: 'text-[#C2410C]' },
-    { id: 'bookings', emoji: '📅', title: t.services.bookings.title, sub: t.services.bookings.sub, color: 'bg-[#F1ECFF]', accent: 'text-[#6D28D9]' },
-    { id: 'school-fees', emoji: '🎓', title: t.services.schoolFees.title, sub: t.services.schoolFees.sub, color: 'bg-[#FEF3D7]', accent: 'text-[#92400E]' },
-    { id: 'njangi', emoji: '👥', title: t.services.njangi.title, sub: t.services.njangi.sub, color: 'bg-[#FDE2E4]', accent: 'text-[#BE185D]' },
-  ];
+  { id: 'akao', emoji: '💚', title: t.services.akao.title, sub: t.services.akao.sub, color: 'bg-mint', accent: 'text-green' },
+  { id: 'marketplace', emoji: '🛒', title: t.services.marketplace.title, sub: t.services.marketplace.sub, color: 'bg-coral', accent: 'text-[#C2410C]' },
+  { id: 'bookings', emoji: '🥖', title: t.services.bookings.title, sub: t.services.bookings.sub, color: 'bg-[#F1ECFF]', accent: 'text-[#6D28D9]' },
+  { id: 'school-fees', emoji: '🎓', title: t.services.schoolFees.title, sub: t.services.schoolFees.sub, color: 'bg-[#FEF3D7]', accent: 'text-[#92400E]' },
+];
 
   const businessCards = [
     { icon: '🛍', title: t.business.cards.sell.title, sub: t.business.cards.sell.sub },
@@ -89,14 +89,13 @@ export default function HomePage() {
               {/* DESKTOP: phone surrounded by floating cards */}
               <div className="hidden lg:flex relative items-center justify-center">
                 <div className="absolute left-0 top-12 z-10 space-y-3 -translate-x-2">
-                  <FloatCard emoji="💚" title={t.services.akao.title} sub="Save & contribute toward your goals" delay="0s" iconBg="bg-mint" />
-                  <FloatCard emoji="📅" title={t.services.bookings.title} sub="Book services with ease" delay="1s" iconBg="bg-[#F1ECFF]" />
+                  <FloatCard emoji="💚" title={t.services.akao.title} sub="Contribute daily — every franc tracked" delay="0s" iconBg="bg-mint" />
+                  <FloatCard emoji="📅" title={t.services.bookings.title} sub="Reserve bakeries, salons, tables — no queues" delay="1s" iconBg="bg-[#F1ECFF]" />
                 </div>
                 <PhoneInline />
                 <div className="absolute right-0 top-4 z-10 space-y-3 translate-x-2">
-                  <FloatCard emoji="🛍" title={t.services.marketplace.title} sub="Buy & sell amazing products" delay="0.5s" iconBg="bg-coral" />
-                  <FloatCard emoji="🎓" title={t.services.schoolFees.title} sub="Pay tuition instantly" delay="1.5s" iconBg="bg-[#FEF3D7]" />
-                  <FloatCard emoji="👥" title={t.services.njangi.title} sub="Build circles, achieve together" delay="2s" iconBg="bg-[#FDE2E4]" />
+                  <FloatCard emoji="🛍" title={t.services.marketplace.title} sub="Send exact items to family — QR pickup" delay="0.5s" iconBg="bg-coral" />
+                  <FloatCard emoji="🎓" title={t.services.schoolFees.title} sub="Direct to the school — with a receipt" delay="1.5s" iconBg="bg-[#FEF3D7]" />
                 </div>
               </div>
 
@@ -109,11 +108,10 @@ export default function HomePage() {
 
           {/* MOBILE-ONLY service preview cards — stacked under phone */}
           <div className="lg:hidden mt-10 grid grid-cols-2 gap-3">
-            <MobileFeatureCard emoji="💚" title={t.services.akao.title} sub="Save & contribute" iconBg="bg-mint" />
-            <MobileFeatureCard emoji="🛍" title={t.services.marketplace.title} sub="Buy & sell" iconBg="bg-coral" />
-            <MobileFeatureCard emoji="📅" title={t.services.bookings.title} sub="Book services" iconBg="bg-[#F1ECFF]" />
-            <MobileFeatureCard emoji="🎓" title={t.services.schoolFees.title} sub="Pay tuition" iconBg="bg-[#FEF3D7]" />
-            <MobileFeatureCard emoji="👥" title={t.services.njangi.title} sub="Build circles" iconBg="bg-[#FDE2E4]" />
+            <MobileFeatureCard emoji="💚" title={t.services.akao.title} sub="Contribute daily" iconBg="bg-mint" />
+            <MobileFeatureCard emoji="🛍" title={t.services.marketplace.title} sub="QR pickup" iconBg="bg-coral" />
+            <MobileFeatureCard emoji="📅" title={t.services.bookings.title} sub="Skip the queue" iconBg="bg-[#F1ECFF]" />
+            <MobileFeatureCard emoji="🎓" title={t.services.schoolFees.title} sub="Direct to school" iconBg="bg-[#FEF3D7]" />
           </div>
 
           {/* WAITLIST inline below hero */}
@@ -146,6 +144,27 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* STORY TEASER — Read Fabi's story */}
+<section className="bg-cream py-16 lg:py-20 border-y border-border">
+  <div className="max-w-4xl mx-auto px-6 lg:px-10 text-center">
+    <div className="inline-flex items-center gap-2 bg-gold/15 border border-gold/30 rounded-full px-4 py-1.5 mb-6">
+      <span className="text-xs font-bold text-[#92400E] uppercase tracking-wider">{t.story.eyebrow}</span>
+    </div>
+    <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-black text-green leading-tight mb-6 max-w-3xl mx-auto">
+      {t.story.title}
+    </h2>
+    <p className="text-lg text-muted leading-relaxed max-w-2xl mx-auto mb-8">
+      {t.story.copy}
+    </p>
+    <Link
+      href="/why-ekie"
+      className="inline-flex items-center gap-2 bg-green hover:bg-green-2 text-white rounded-full px-6 py-3.5 text-sm font-bold transition-colors shadow-soft"
+    >
+      {t.story.cta} <ArrowRight className="w-4 h-4" />
+    </Link>
+  </div>
+</section>
+
       {/* SERVICES — Explore Ékié with hover-zoom cards */}
       <section id="services" className="py-24 bg-cream">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
@@ -154,7 +173,7 @@ export default function HomePage() {
             <p className="text-muted text-lg max-w-2xl mx-auto">{t.services.sub}</p>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-5">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 max-w-6xl mx-auto">
             {serviceCards.map((s) => (
               <article key={s.id} id={s.id}
                 className={`${s.color} rounded-3xl p-6 hover:scale-105 hover:shadow-card transition-all duration-300 cursor-default group relative overflow-hidden`}>
@@ -220,10 +239,10 @@ export default function HomePage() {
         <div className="max-w-5xl mx-auto px-6 lg:px-10">
           <div className="text-center mb-12">
             <div className="inline-flex items-center gap-2 bg-gold/15 border border-gold/30 rounded-full px-4 py-1.5 mb-4">
-              <span className="text-xs font-bold text-[#92400E] uppercase tracking-wider">Meet the Founder</span>
+              <span className="text-xs font-bold text-[#92400E] uppercase tracking-wider">{t.aboutFounder.eyebrow}</span>
             </div>
             <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-black text-green leading-tight">
-              Hi, I&apos;m <span className="text-gold">Fabiola</span>.
+              {t.aboutFounder.title}<span className="text-gold">{t.aboutFounder.titleAccent}</span>{t.aboutFounder.titleEnd}
             </h2>
           </div>
 
@@ -233,17 +252,27 @@ export default function HomePage() {
             </div>
 
             <div className="space-y-4 text-ink/85 text-[15px] leading-relaxed">
-              <p>I grew up seeing how everyday financial activities that should be simple often became stressful, time-consuming, and difficult to manage.</p>
-              <p>From contribution groups and Njangi circles, to school fee payments, finding trusted local services, and supporting loved ones from afar, I experienced many of the same challenges faced by families and communities across Cameroon.</p>
-              <p>Over the years, I kept asking myself a simple question:</p>
+              <p>{t.aboutFounder.p1}</p>
+              <p>{t.aboutFounder.p2}</p>
+              <p className="font-bold text-green">{t.aboutFounder.p3}</p>
+              <p>{t.aboutFounder.p4}</p>
+              <p>{t.aboutFounder.p5}</p>
+              <p className="font-bold text-green">{t.aboutFounder.p6}</p>
+              <p>{t.aboutFounder.p7}</p>
+              <p>{t.aboutFounder.p8}</p>
               <blockquote className="font-display text-xl text-green italic font-bold border-l-4 border-gold pl-5 py-2 my-2">
-                Why should something so important be so complicated?
+                {t.aboutFounder.quote}
               </blockquote>
-              <p>That question became the foundation of Ékié.</p>
-              <p>I created Ékié with a vision of bringing everyday community life into one trusted platform — a place where people can contribute, shop, book services, support education, and grow together.</p>
-              <p>Today, Ékié is more than a technology platform. It is a commitment to building tools that make life easier for families, communities, entrepreneurs, and businesses across Cameroon and beyond.</p>
-              <p className="text-green font-bold text-lg pt-3">Welcome to Ékié.</p>
-              <p className="font-display text-base text-muted italic">— Fabiola Nsuh, Founder, Ékié</p>
+              <p>{t.aboutFounder.p9}</p>
+              <p className="font-bold text-green">{t.aboutFounder.p10}</p>
+              <p>{t.aboutFounder.p11}</p>
+              <p className="pt-2">
+                <Link href="/why-ekie" className="inline-flex items-center gap-2 text-green font-bold hover:text-gold transition-colors group">
+                  {t.aboutFounder.readMore} <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </Link>
+              </p>
+              <p className="text-green font-bold text-lg pt-3">{t.aboutFounder.welcome}</p>
+              <p className="font-display text-base text-muted italic">{t.aboutFounder.signature}</p>
             </div>
           </div>
         </div>

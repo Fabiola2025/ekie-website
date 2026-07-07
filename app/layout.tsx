@@ -7,21 +7,18 @@ const inter = Inter({ subsets: ['latin'], variable: '--font-inter', display: 'sw
 const playfair = Playfair_Display({ subsets: ['latin'], variable: '--font-playfair', display: 'swap' });
 
 export const metadata: Metadata = {
-  title: 'Ékié | Contribute, Shop, Book & Grow Together',
-  description: 'Ékié is a Cameroonian platform for Akao contributions, marketplace shopping, bookings, school fees and Njangi circles. Where your money is family.',
-  keywords: ['Ékié', 'Cameroon', 'Akao', 'Njangi', 'mobile money', 'marketplace', 'bookings'],
-  authors: [{ name: 'Fabiola Nsuh' }],
+  title: 'Ékié | Trust infrastructure for African families',
+  description: 'Ékié lets diaspora families pay directly for what matters — school fees, foodstuffs, medical care, construction, everyday support — to verified vendors in Cameroon. With receipts. With QR pickup. Launching September 2026.',
+  keywords: ['Ékié', 'Cameroon', 'diaspora', 'Akao', 'purpose-locked payments', 'family support', 'remittance', 'trust infrastructure', 'verified vendors', 'school fees', 'construction materials', 'foodstuffs'],
   openGraph: {
-    title: 'Ékié — Where your money is family',
-    description: 'One platform for Akao, marketplace, bookings, school fees and Njangi circles. Built for Cameroon.',
-    type: 'website',
-    locale: 'en_US',
-    siteName: 'Ékié',
+    title: 'Ékié — Trust infrastructure for African families',
+    description: 'Send outcomes, not just cash. Purpose-locked family support across Cameroon.',
+    // keep any existing image + url + siteName fields
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Ékié — Where your money is family',
-    description: 'Cameroonian platform for everyday financial life.',
+    title: 'Ékié — Trust infrastructure for African families',
+    description: 'Send outcomes, not just cash. Purpose-locked family support across Cameroon.',
   },
 };
 
