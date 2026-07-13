@@ -10,10 +10,10 @@ export default function HomePage() {
   const { t } = useLang();
 
   const serviceCards = [
-  { id: 'akao', emoji: '💚', title: t.services.akao.title, sub: t.services.akao.sub, color: 'bg-mint', accent: 'text-green' },
-  { id: 'marketplace', emoji: '🛒', title: t.services.marketplace.title, sub: t.services.marketplace.sub, color: 'bg-coral', accent: 'text-[#C2410C]' },
-  { id: 'bookings', emoji: '🥖', title: t.services.bookings.title, sub: t.services.bookings.sub, color: 'bg-[#F1ECFF]', accent: 'text-[#6D28D9]' },
-  { id: 'school-fees', emoji: '🎓', title: t.services.schoolFees.title, sub: t.services.schoolFees.sub, color: 'bg-[#FEF3D7]', accent: 'text-[#92400E]' },
+  { id: 'bookings', emoji: '🥖', title: t.services.bookings.title, sub: t.services.bookings.sub, color: 'bg-[#F1ECFF]', accent: 'text-[#6D28D9]', badge: t.services.badges.launchingSep, badgeType: 'launch' },
+  { id: 'school-fees', emoji: '🎓', title: t.services.schoolFees.title, sub: t.services.schoolFees.sub, color: 'bg-[#FEF3D7]', accent: 'text-[#92400E]', badge: t.services.badges.launchingSep, badgeType: 'launch' },
+  { id: 'akao', emoji: '💚', title: t.services.akao.title, sub: t.services.akao.sub, color: 'bg-mint', accent: 'text-green', badge: t.services.badges.comingNov, badgeType: 'soon' },
+  { id: 'marketplace', emoji: '🛒', title: t.services.marketplace.title, sub: t.services.marketplace.sub, color: 'bg-coral', accent: 'text-[#C2410C]', badge: t.services.badges.comingQ1, badgeType: 'soon' },
 ];
 
   const businessCards = [
@@ -177,6 +177,15 @@ export default function HomePage() {
             {serviceCards.map((s) => (
               <article key={s.id} id={s.id}
                 className={`${s.color} rounded-3xl p-6 hover:scale-105 hover:shadow-card transition-all duration-300 cursor-default group relative overflow-hidden`}>
+                <div className="mb-3">
+                  <span className={`inline-block text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full ${
+                    s.badgeType === 'launch'
+                      ? 'bg-gold text-[#0D3B2E]'
+                      : 'bg-white/70 text-ink/60 border border-ink/10'
+                  }`}>
+                    {s.badge}
+                  </span>
+                </div>
                 <h3 className={`font-display text-xl font-black ${s.accent} mb-2`}>{s.title}</h3>
                 <p className="text-sm text-ink/70 leading-relaxed mb-6">{s.sub}</p>
                 <div className="text-5xl text-right group-hover:scale-110 transition-transform duration-300">{s.emoji}</div>
