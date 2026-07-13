@@ -58,6 +58,11 @@ export const translations = {
         title: 'Family Support',
         sub: 'Send exact items to your family — the exact bag of rice, jug of oil, tomatoes. From verified shops in Douala, Yaoundé, Bamenda. Photo confirmation on pickup.',
       },
+      badges: {
+        launchingSep: 'Launching Sep 2026',
+        comingNov: 'Coming Nov 2026',
+        comingQ1: 'Coming Q1 2027',
+      },
     },
     story: {
       eyebrow: '📖 Why we\'re building this',
@@ -357,6 +362,11 @@ export const translations = {
       familySupport: {
         title: 'Soutien familial',
         sub: 'Envoyez les articles exacts à votre famille — le sac de riz exact, le bidon d\'huile, les tomates. De boutiques vérifiées à Douala, Yaoundé, Bamenda. Confirmation photo au retrait.',
+      },
+      badges: {
+        launchingSep: 'Lancement Sep 2026',
+        comingNov: 'Disponible Nov 2026',
+        comingQ1: 'Disponible T1 2027',
       },
     },
     story: {
