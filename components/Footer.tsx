@@ -23,6 +23,7 @@ export default function Footer() {
             <ul className="space-y-2 text-sm">
               <li><Link href="/#akao" className="hover:text-gold transition-colors">{t.footer.productLinks.akao}</Link></li>
               <li><Link href="/#marketplace" className="hover:text-gold transition-colors">{t.footer.productLinks.marketplace}</Link></li>
+              <li><Link href="/#skip-the-queue" className="hover:text-gold transition-colors">{t.footer.productLinks.skipTheQueue}</Link></li>
               <li><Link href="/#bookings" className="hover:text-gold transition-colors">{t.footer.productLinks.bookings}</Link></li>
               <li><Link href="/#school-fees" className="hover:text-gold transition-colors">{t.footer.productLinks.schoolFees}</Link></li>
               <li><Link href="/why-ekie" className="hover:text-gold transition-colors">{t.footer.companyLinks.whyEkie}</Link></li>

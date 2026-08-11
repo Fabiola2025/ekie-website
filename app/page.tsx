@@ -10,10 +10,11 @@ export default function HomePage() {
   const { t } = useLang();
 
   const serviceCards = [
-  { id: 'bookings', emoji: '🥖', title: t.services.bookings.title, sub: t.services.bookings.sub, color: 'bg-[#F1ECFF]', accent: 'text-[#6D28D9]', badge: t.services.badges.launchingSep, badgeType: 'launch' },
   { id: 'school-fees', emoji: '🎓', title: t.services.schoolFees.title, sub: t.services.schoolFees.sub, color: 'bg-[#FEF3D7]', accent: 'text-[#92400E]', badge: t.services.badges.launchingSep, badgeType: 'launch' },
+  { id: 'skip-the-queue', emoji: '⚡', title: t.services.skipTheQueue.title, sub: t.services.skipTheQueue.sub, color: 'bg-[#FFE8D6]', accent: 'text-[#B45309]', badge: t.services.badges.launchingSep, badgeType: 'launch' },
+  { id: 'bookings', emoji: '📅', title: t.services.bookings.title, sub: t.services.bookings.sub, color: 'bg-[#F1ECFF]', accent: 'text-[#6D28D9]', badge: t.services.badges.launchingSep, badgeType: 'launch' },
   { id: 'akao', emoji: '💚', title: t.services.akao.title, sub: t.services.akao.sub, color: 'bg-mint', accent: 'text-green', badge: t.services.badges.comingNov, badgeType: 'soon' },
-  { id: 'marketplace', emoji: '🛒', title: t.services.marketplace.title, sub: t.services.marketplace.sub, color: 'bg-coral', accent: 'text-[#C2410C]', badge: t.services.badges.comingQ1, badgeType: 'soon' },
+  { id: 'marketplace', emoji: '🛒', title: t.services.marketplace.title, sub: t.services.marketplace.sub, color: 'bg-coral', accent: 'text-[#C2410C]', badge: t.services.badges.comingNov, badgeType: 'soon' },
 ];
 
   const businessCards = [
@@ -88,9 +89,10 @@ export default function HomePage() {
             <div className="relative animate-fade-in" style={{ animationDelay: '0.3s' }}>
               {/* DESKTOP: phone surrounded by floating cards */}
               <div className="hidden lg:flex relative items-center justify-center">
-                <div className="absolute left-0 top-12 z-10 space-y-3 -translate-x-2">
+                <div className="absolute left-0 top-8 z-10 space-y-3 -translate-x-2">
                   <FloatCard emoji="💚" title={t.services.akao.title} sub="Contribute daily — every franc tracked" delay="0s" iconBg="bg-mint" />
-                  <FloatCard emoji="📅" title={t.services.bookings.title} sub="Reserve bakeries, salons, tables — no queues" delay="1s" iconBg="bg-[#F1ECFF]" />
+                  <FloatCard emoji="⚡" title={t.services.skipTheQueue.title} sub="Pre-order, skip the line, grab & go" delay="0.75s" iconBg="bg-[#FFE8D6]" />
+                  <FloatCard emoji="📅" title={t.services.bookings.title} sub="Salons, restaurants, wedding services" delay="1s" iconBg="bg-[#F1ECFF]" />
                 </div>
                 <PhoneInline />
                 <div className="absolute right-0 top-4 z-10 space-y-3 translate-x-2">
@@ -106,12 +108,13 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* MOBILE-ONLY service preview cards — stacked under phone */}
+          {/* MOBILE-ONLY service preview cards — 5 features in compact grid */}
           <div className="lg:hidden mt-10 grid grid-cols-2 gap-3">
+            <MobileFeatureCard emoji="🎓" title={t.services.schoolFees.title} sub="Direct to school" iconBg="bg-[#FEF3D7]" />
+            <MobileFeatureCard emoji="⚡" title={t.services.skipTheQueue.title} sub="Grab & go, no queue" iconBg="bg-[#FFE8D6]" />
+            <MobileFeatureCard emoji="📅" title={t.services.bookings.title} sub="Salons, tables, weddings" iconBg="bg-[#F1ECFF]" />
             <MobileFeatureCard emoji="💚" title={t.services.akao.title} sub="Contribute daily" iconBg="bg-mint" />
             <MobileFeatureCard emoji="🛍" title={t.services.marketplace.title} sub="QR pickup" iconBg="bg-coral" />
-            <MobileFeatureCard emoji="📅" title={t.services.bookings.title} sub="Skip the queue" iconBg="bg-[#F1ECFF]" />
-            <MobileFeatureCard emoji="🎓" title={t.services.schoolFees.title} sub="Direct to school" iconBg="bg-[#FEF3D7]" />
           </div>
 
           {/* WAITLIST inline below hero */}
@@ -216,6 +219,39 @@ export default function HomePage() {
       </section>
 
       {/* BUSINESS */}
+      {/* ══════ WAYS TO PAY ══════ */}
+      <section className="py-16 md:py-24 bg-cream">
+        <div className="container mx-auto px-6 md:px-8 max-w-5xl">
+          <div className="text-center mb-10">
+            <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-black text-green mb-3">
+              {t.waysToPay.heading}
+            </h2>
+            <p className="text-muted text-lg max-w-2xl mx-auto">{t.waysToPay.sub}</p>
+          </div>
+          <div className="grid md:grid-cols-2 gap-6 mb-8">
+            <div className="bg-white rounded-2xl p-8 shadow-sm border border-black/5">
+              <div className="flex items-center gap-3 mb-4">
+                <span className="text-3xl">🇨🇲</span>
+                <h3 className="font-display text-xl font-bold text-green">{t.waysToPay.cameroon.title}</h3>
+              </div>
+              <p className="text-muted leading-relaxed">{t.waysToPay.cameroon.sub}</p>
+            </div>
+            <div className="bg-white rounded-2xl p-8 shadow-sm border border-black/5">
+              <div className="flex items-center gap-3 mb-4">
+                <span className="text-3xl">🌍</span>
+                <h3 className="font-display text-xl font-bold text-green">{t.waysToPay.diaspora.title}</h3>
+              </div>
+              <p className="text-muted leading-relaxed">{t.waysToPay.diaspora.sub}</p>
+            </div>
+          </div>
+          <div className="bg-mint/50 rounded-xl p-5 text-center">
+            <p className="text-sm text-green/90 leading-relaxed">
+              🔒 {t.waysToPay.compliance}
+            </p>
+          </div>
+        </div>
+      </section>
+
       <section id="business" className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
