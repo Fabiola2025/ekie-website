@@ -15,14 +15,14 @@ export const translations = {
       eyebrow: '✨ Trust infrastructure for African families',
       title: 'Send outcomes,',
       titleAccent: 'not just cash.',
-      copy: 'Ékié lets diaspora families pay for what actually matters — school fees, foodstuffs, medical care, construction, everyday support — directly to verified vendors in Cameroon. With receipts. With QR pickup. With trust built in.',
+      copy: 'Ékié is trust infrastructure. Every feature we build is one more way for a diaspora daughter to know her money arrived and served its actual purpose — one more way for a Cameroon vendor to know their customer will pay — one more way for a family to trust the systems that connect them. School fees, bookings, quick pickups, contributions, marketplace goods. With receipts. With QR pickup. With verified vendors. With trust built in.',
       ctaPrimary: 'Join the waitlist',
       ctaSecondary: 'Read our story',
       trustCopy: 'For every family with people abroad, and every one who never left.',
     },
     waitlist: {
       title: 'Be first when Ékié launches',
-      sub: 'September 2026. Cameroon. Join thousands who are ready to send love with receipts.',
+      sub: 'Cameroon. Join thousands who are ready to send love with receipts.',
       placeholder: 'Your email address',
       submit: 'Join waitlist',
       success: '🎉 You\'re on the list. We\'ll email you when Ékié launches.',
@@ -30,7 +30,7 @@ export const translations = {
     },
     features: {
       secure: { title: 'Verified vendors', sub: 'Every shop, every receipt' },
-      community: { title: 'Direct to source', sub: 'Money goes where it\'s meant to' },
+      community: { title: 'Escrow-secured', sub: 'Held safely until pickup' },
       fast: { title: 'QR pickup', sub: 'Just walk in and collect' },
       allinone: { title: 'All in one', sub: 'Family support, Akao, bookings' },
       cameroon: { title: 'Cameroon first', sub: 'Built by us, for us' },
@@ -40,15 +40,19 @@ export const translations = {
       sub: 'One platform. Every kind of support you send home — with receipts.',
       akao: {
         title: 'Akao',
-        sub: 'Your daily Akao — from your phone. No cash-in-hand. No missing agents. No fake stories. Every franc tracked.',
+        sub: 'Your daily Akao — from your phone. No cash-in-hand. No missing agents. No fake stories. Every franc tracked. Available for use within Cameroon only. Basic verification required (source-of-funds declaration, Cameroon financial regulation compliance).',
       },
       marketplace: {
         title: 'Ékié Marketplace',
         sub: 'Send exact items to your family — foodstuffs, construction, pharmacy, baby supplies — from verified shops in Cameroon. Your family walks in with a QR code and picks up.',
       },
-      bookings: {
+      skipTheQueue: {
         title: 'Skip the Queue',
-        sub: 'Reserve your bakery, restaurant, salon or service in advance. No queues. No wahala.',
+        sub: 'For when you don\'t want to wait. Pre-order at your favorite bakery, café, ice cream shop, or quick service. Pay in-app via MoMo or card. Show up with a QR code. Skip the line. Grab and go.',
+      },
+      bookings: {
+        title: 'Bookings',
+        sub: 'For when you\'re planning ahead. Book your hair appointment for Saturday. Reserve your table for dinner. Schedule your wedding coordinator meeting. Pay a small deposit to secure your slot. Show up on time with a QR code. Real reservations. Real commitment. Real trust.',
       },
       schoolFees: {
         title: 'School Fees',
@@ -59,9 +63,9 @@ export const translations = {
         sub: 'Send exact items to your family — the exact bag of rice, jug of oil, tomatoes. From verified shops in Douala, Yaoundé, Bamenda. Photo confirmation on pickup.',
       },
       badges: {
-        launchingSep: 'Launching Sep 2026',
-        comingNov: 'Coming Nov 2026',
-        comingQ1: 'Coming Q1 2027',
+        launchingSep: 'First to launch',
+        comingNov: 'Coming soon after launch',
+        comingQ1: 'Coming soon after launch',
       },
     },
     story: {
@@ -73,7 +77,7 @@ export const translations = {
     business: {
       eyebrow: '🏪 For businesses',
       title: 'Become a verified Ékié vendor.',
-      copy: 'Diaspora Cameroonians spend billions of XAF a year on support back home. When they use Ékié, they order from vendors they can trust. Get verified, sell to a global customer base, receive payouts directly to your account.',
+      copy: 'Diaspora Cameroonians send hundreds of billions of XAF home every year — for family support, school fees, weddings, construction, everyday needs. When they use Ékié, they order from vendors they can trust. Get verified, sell to a global customer base, receive payouts directly to your account after every completed transaction.',
       cta: 'Apply as a vendor',
       cards: {
         sell: {
@@ -128,7 +132,7 @@ export const translations = {
       sub: 'Simple. Verified. Trackable.',
       step1: {
         title: 'Sign up in 60 seconds',
-        sub: 'Phone number + PIN. That\'s it. Same account works from anywhere in the world.',
+        sub: 'Choose phone or email + PIN. That\'s it. Same account works from Cameroon or anywhere in the world.',
       },
       step2: {
         title: 'Choose what to send',
@@ -136,12 +140,25 @@ export const translations = {
       },
       step3: {
         title: 'Pay a verified vendor',
-        sub: 'Money goes directly to the vendor\'s account. Ékié never holds your funds.',
+        sub: 'Funds are held safely in escrow by our licensed payment partner (CinetPay) and released to the vendor only when your family picks up. If pickup doesn\'t happen, you get refunded. Ékié never touches your money.',
       },
       step4: {
         title: 'Your family picks up',
         sub: 'They walk in with a QR code. Vendor scans. Photo confirmation to you. Done.',
       },
+    },
+    waysToPay: {
+      heading: 'Pay however you\'re used to paying.',
+      sub: 'Cameroon or diaspora — every payment method routed through our licensed payment partner.',
+      cameroon: {
+        title: 'For Cameroon',
+        sub: 'MoMo (MTN, Orange). Local debit cards. Direct-from-your-bank.',
+      },
+      diaspora: {
+        title: 'For diaspora',
+        sub: 'International debit and credit cards (USD, EUR, GBP). Same trust, wherever you\'re sending from.',
+      },
+      compliance: 'All payments routed through CinetPay — our licensed Cameroonian payment partner. Full BEAC compliance. No hidden fees. Receipts on everything.',
     },
     vendor: {
       heading: 'Apply to become a verified vendor',
@@ -177,7 +194,7 @@ export const translations = {
     },
     cta: {
       heading: 'Ready to send love with receipts?',
-      sub: 'Ékié launches September 2026 in Cameroon. Be one of the first to send outcomes instead of cash.',
+      sub: 'Ékié launches soon in Cameroon. Be one of the first to send outcomes instead of cash.',
       download: 'Join the waitlist',
       business: 'Apply as a vendor',
     },
@@ -188,7 +205,8 @@ export const translations = {
       productLinks: {
         akao: 'Akao',
         marketplace: 'Marketplace',
-        bookings: 'Skip the Queue',
+        skipTheQueue: 'Skip the Queue',
+        bookings: 'Bookings',
         schoolFees: 'School Fees',
         familySupport: 'Family Support',
       },
@@ -320,14 +338,14 @@ export const translations = {
       eyebrow: '✨ Infrastructure de confiance pour les familles africaines',
       title: 'Envoyez des résultats,',
       titleAccent: 'pas seulement de l\'argent.',
-      copy: 'Ékié permet aux familles de la diaspora de payer directement ce qui compte vraiment — frais de scolarité, provisions, soins médicaux, matériaux de construction, soutien quotidien — chez des commerçants vérifiés au Cameroun. Avec des reçus. Avec un QR pour retrait. Avec la confiance intégrée.',
+      copy: 'Ékié est une infrastructure de confiance. Chaque fonctionnalité que nous construisons est une façon de plus pour une fille de la diaspora de savoir que son argent est arrivé et a rempli son but réel — une façon de plus pour un commerçant camerounais de savoir que son client paiera — une façon de plus pour une famille de faire confiance aux systèmes qui les relient. Frais de scolarité, réservations, retraits rapides, contributions, biens du marché. Avec des reçus. Avec un QR pour retrait. Avec des commerçants vérifiés. Avec la confiance intégrée.',
       ctaPrimary: 'Rejoindre la liste',
       ctaSecondary: 'Notre histoire',
       trustCopy: 'Pour chaque famille avec des proches à l\'étranger, et chacune qui n\'est jamais partie.',
     },
     waitlist: {
       title: 'Soyez les premiers au lancement d\'Ékié',
-      sub: 'Septembre 2026. Cameroun. Rejoignez ceux qui sont prêts à envoyer de l\'amour avec des reçus.',
+      sub: 'Cameroun. Rejoignez ceux qui sont prêts à envoyer de l\'amour avec des reçus.',
       placeholder: 'Votre adresse email',
       submit: 'Rejoindre',
       success: '🎉 Vous êtes inscrit. Nous vous informerons au lancement d\'Ékié.',
@@ -335,7 +353,7 @@ export const translations = {
     },
     features: {
       secure: { title: 'Commerçants vérifiés', sub: 'Chaque boutique, chaque reçu' },
-      community: { title: 'Direct à la source', sub: 'L\'argent va où il doit aller' },
+      community: { title: 'Sécurisé par séquestre', sub: 'Retenu jusqu\'au retrait' },
       fast: { title: 'Retrait par QR', sub: 'Entrez et récupérez' },
       allinone: { title: 'Tout-en-un', sub: 'Soutien familial, Akao, réservations' },
       cameroon: { title: 'Cameroun d\'abord', sub: 'Fait par nous, pour nous' },
@@ -345,15 +363,19 @@ export const translations = {
       sub: 'Une plateforme. Chaque type de soutien envoyé au pays — avec des reçus.',
       akao: {
         title: 'Akao',
-        sub: 'Votre Akao quotidien — depuis votre téléphone. Pas de cash-en-main. Pas d\'agent qui disparaît. Pas de fausses histoires. Chaque franc tracé.',
+        sub: 'Votre Akao quotidien — depuis votre téléphone. Pas de cash-en-main. Pas d\'agent qui disparaît. Pas de fausses histoires. Chaque franc tracé. Disponible pour utilisation au Cameroun uniquement. Vérification de base requise (déclaration de source de fonds, conformité à la réglementation financière camerounaise).',
       },
       marketplace: {
         title: 'Marché Ékié',
         sub: 'Envoyez les articles exacts à votre famille — provisions, construction, pharmacie, articles bébé — chez des commerçants vérifiés au Cameroun. Votre famille récupère avec un QR code.',
       },
-      bookings: {
+      skipTheQueue: {
         title: 'Skip the Queue',
-        sub: 'Réservez votre boulangerie, restaurant, salon ou service à l\'avance. Sans queue. Sans wahala.',
+        sub: 'Pour quand vous ne voulez pas attendre. Pré-commandez à votre boulangerie préférée, café, glacier ou service rapide. Payez dans l\'app par MoMo ou carte. Présentez-vous avec un QR code. Sautez la file. Prenez et partez.',
+      },
+      bookings: {
+        title: 'Réservations',
+        sub: 'Pour quand vous planifiez à l\'avance. Réservez votre coiffeur pour samedi. Gardez votre table pour le dîner. Prenez rendez-vous avec votre organisateur de mariage. Payez un petit acompte pour sécuriser votre créneau. Présentez-vous à l\'heure avec un QR code. Vraies réservations. Vrai engagement. Vraie confiance.',
       },
       schoolFees: {
         title: 'Frais de scolarité',
@@ -364,9 +386,9 @@ export const translations = {
         sub: 'Envoyez les articles exacts à votre famille — le sac de riz exact, le bidon d\'huile, les tomates. De boutiques vérifiées à Douala, Yaoundé, Bamenda. Confirmation photo au retrait.',
       },
       badges: {
-        launchingSep: 'Lancement Sep 2026',
-        comingNov: 'Disponible Nov 2026',
-        comingQ1: 'Disponible T1 2027',
+        launchingSep: 'Premier au lancement',
+        comingNov: 'Bientôt après le lancement',
+        comingQ1: 'Bientôt après le lancement',
       },
     },
     story: {
@@ -378,7 +400,7 @@ export const translations = {
     business: {
       eyebrow: '🏪 Pour les entreprises',
       title: 'Devenez un commerçant Ékié vérifié.',
-      copy: 'Les Camerounais de la diaspora dépensent des milliards de XAF par an pour soutenir leur famille. Quand ils utilisent Ékié, ils commandent chez des commerçants de confiance. Soyez vérifié, vendez à une clientèle mondiale, recevez vos paiements directement.',
+      copy: 'Les Camerounais de la diaspora envoient des centaines de milliards de XAF au pays chaque année — pour le soutien familial, les frais de scolarité, les mariages, la construction, les besoins quotidiens. Quand ils utilisent Ékié, ils commandent chez des commerçants de confiance. Soyez vérifié, vendez à une clientèle mondiale, recevez vos paiements directement après chaque transaction complétée.',
       cta: 'Postuler comme commerçant',
       cards: {
         sell: {
@@ -433,7 +455,7 @@ export const translations = {
       sub: 'Simple. Vérifié. Traçable.',
       step1: {
         title: 'Inscription en 60 secondes',
-        sub: 'Numéro de téléphone + PIN. C\'est tout. Le même compte marche partout dans le monde.',
+        sub: 'Choisissez téléphone ou email + PIN. C\'est tout. Le même compte marche au Cameroun ou partout dans le monde.',
       },
       step2: {
         title: 'Choisissez quoi envoyer',
@@ -441,12 +463,25 @@ export const translations = {
       },
       step3: {
         title: 'Payez un commerçant vérifié',
-        sub: 'L\'argent va directement au compte du commerçant. Ékié ne détient jamais vos fonds.',
+        sub: 'Les fonds sont conservés en séquestre par notre partenaire de paiement agréé (CinetPay) et versés au commerçant uniquement lorsque votre famille récupère. Si le retrait n\'a pas lieu, vous êtes remboursé. Ékié ne touche jamais à votre argent.',
       },
       step4: {
         title: 'Votre famille récupère',
         sub: 'Elle entre avec un QR code. Le commerçant scanne. Confirmation photo. Terminé.',
       },
+    },
+    waysToPay: {
+      heading: 'Payez comme vous en avez l\'habitude.',
+      sub: 'Cameroun ou diaspora — chaque méthode de paiement passe par notre partenaire de paiement agréé.',
+      cameroon: {
+        title: 'Pour le Cameroun',
+        sub: 'MoMo (MTN, Orange). Cartes bancaires locales. Directement de votre banque.',
+      },
+      diaspora: {
+        title: 'Pour la diaspora',
+        sub: 'Cartes bancaires et de crédit internationales (USD, EUR, GBP). Même confiance, d\'où que vous envoyiez.',
+      },
+      compliance: 'Tous les paiements sont acheminés via CinetPay — notre partenaire de paiement agréé au Cameroun. Conformité BEAC complète. Sans frais cachés. Reçus sur tout.',
     },
     vendor: {
       heading: 'Postulez pour devenir un commerçant vérifié',
@@ -482,7 +517,7 @@ export const translations = {
     },
     cta: {
       heading: 'Prêt à envoyer de l\'amour avec des reçus ?',
-      sub: 'Ékié lance en septembre 2026 au Cameroun. Soyez parmi les premiers à envoyer des résultats au lieu d\'argent.',
+      sub: 'Ékié lance bientôt au Cameroun. Soyez parmi les premiers à envoyer des résultats au lieu d\'argent.',
       download: 'Rejoindre la liste',
       business: 'Postuler comme commerçant',
     },
@@ -493,7 +528,8 @@ export const translations = {
       productLinks: {
         akao: 'Akao',
         marketplace: 'Marché',
-        bookings: 'Skip the Queue',
+        skipTheQueue: 'Skip the Queue',
+        bookings: 'Réservations',
         schoolFees: 'Frais de scolarité',
         familySupport: 'Soutien familial',
       },
