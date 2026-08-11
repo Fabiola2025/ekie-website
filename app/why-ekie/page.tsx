@@ -145,6 +145,62 @@ export default function WhyEkiePage() {
             </div>
           </section>
 
+          {/* Section 4.5 — Akao: the trust that keeps breaking */}
+          <section className="mb-14">
+            <h2 className="font-display text-2xl md:text-3xl font-black text-green leading-tight mb-6">
+              {w.section4_5Title}
+            </h2>
+            <div className="prose-content space-y-5 text-ink text-lg leading-relaxed">
+              <p>{w.section4_5Body1}</p>
+              <p>{w.section4_5Body2}</p>
+              <p>{w.section4_5Body3}</p>
+              <p className="font-bold text-green text-xl md:text-2xl italic border-l-4 border-gold pl-5 my-8">
+                {w.section4_5Emphasis1}
+              </p>
+
+              {/* Story anchor — anonymized friend */}
+              <p>{w.section4_5StoryBody1}</p>
+              <p>{w.section4_5StoryBody2}</p>
+              <p>{w.section4_5StoryBody3}</p>
+              <p>{w.section4_5StoryBody4}</p>
+              <p>{w.section4_5StoryBody5}</p>
+              <p className="font-bold text-green text-xl md:text-2xl italic border-l-4 border-gold pl-5 my-8">
+                {w.section4_5StoryEmphasis}
+              </p>
+
+              {/* Systemic pattern */}
+              <p>{w.section4_5PatternBody1}</p>
+              <p>{w.section4_5PatternBody2}</p>
+              <p>{w.section4_5PatternBody3}</p>
+              <p className="font-bold text-gold text-xl md:text-2xl italic border-l-4 border-gold pl-5 my-8">
+                {w.section4_5PatternEmphasis}
+              </p>
+
+              {/* Ékié solution */}
+              <p>{w.section4_5SolutionBody1}</p>
+              <p>{w.section4_5SolutionBody2}</p>
+              <p>{w.section4_5SolutionBody3}</p>
+              <p>{w.section4_5SolutionBody4}</p>
+              <p>{w.section4_5SolutionKyc}</p>
+              <p>{w.section4_5SolutionNjangi}</p>
+              <p>{w.section4_5SolutionDomestic}</p>
+              <p className="font-bold text-green text-xl md:text-2xl italic border-l-4 border-gold pl-5 my-8">
+                {w.section4_5SolutionEmphasis}
+              </p>
+              <p className="font-bold text-green text-lg italic mt-6">
+                {w.section4_5SolutionClosing}
+              </p>
+
+              {/* Closing — ties back to trust infrastructure */}
+              <p>{w.section4_5FinalBody1}</p>
+              <p className="font-bold text-green text-xl md:text-2xl italic border-l-4 border-gold pl-5 my-8">
+                {w.section4_5FinalEmphasis}
+              </p>
+              <p className="font-bold text-gold text-xl md:text-2xl italic mt-6">
+                {w.section4_5FinalClosing}
+              </p>
+            </div>
+          </section>
           {/* Section 5 — Not about control */}
           <section className="mb-14">
             <h2 className="font-display text-2xl md:text-3xl font-black text-green leading-tight mb-6">
