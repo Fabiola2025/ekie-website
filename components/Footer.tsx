@@ -12,7 +12,7 @@ export default function Footer() {
         <div className="grid md:grid-cols-4 gap-10 mb-12">
           {/* Brand */}
           <div>
-            <div className="font-display text-3xl font-black text-gold mb-3">Ékié</div>
+            <img src="/ekie-logo-full.svg" alt="Ékié" className="h-12 mb-3" />
             <p className="text-sm text-white/55 leading-relaxed mb-3">{t.footer.tagline}</p>
             <p className="text-xs text-white/40">🇨🇲 🇺🇸 {t.footer.madeIn}</p>
           </div>

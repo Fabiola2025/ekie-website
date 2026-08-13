@@ -18,8 +18,8 @@ export default function Nav() {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-green/95 backdrop-blur-md border-b border-gold/10">
       <div className="max-w-7xl mx-auto px-6 lg:px-10 h-16 flex items-center justify-between">
-        <Link href="/" className="font-display text-2xl font-black text-gold tracking-tight">
-          Ékié
+        <Link href="/" className="flex items-center">
+          <img src="/ekie-logo.svg" alt="Ékié" className="h-8" />
         </Link>
 
         <ul className="hidden md:flex items-center gap-8">
