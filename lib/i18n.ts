@@ -342,7 +342,7 @@ export const translations = {
       section6Signoff: 'Welcome home.',
       signature: '— Fabi',
 
-      ctaTitle: 'Ékié launches September 2026 in Cameroon.',
+      ctaTitle: 'Ékié launches soon in Cameroon.',
       ctaSub: 'Join the waitlist — be one of the first to send love with receipts.',
       ctaButton: 'Join the waitlist',
     },
@@ -693,7 +693,7 @@ export const translations = {
       section6Signoff: 'Bienvenue à la maison.',
       signature: '— Fabi',
 
-      ctaTitle: 'Ékié lance en septembre 2026 au Cameroun.',
+      ctaTitle: 'Ékié lance bientôt au Cameroun.',
       ctaSub: 'Rejoignez la liste d\'attente — soyez parmi les premiers à envoyer de l\'amour avec des reçus.',
       ctaButton: 'Rejoindre la liste',
     },
