@@ -360,7 +360,7 @@ export default function HomePage() {
       </section>
 
       {/* FINAL CTA */}
-      <section id="download" className="py-24 bg-green text-white text-center relative overflow-hidden">
+      <section id="download" className="py-24 bg-[#002820] text-white text-center relative overflow-hidden">
         <div className="absolute -top-32 -right-32 w-96 h-96 rounded-full bg-gold/10 blur-3xl" />
         <div className="absolute -bottom-32 -left-32 w-80 h-80 rounded-full bg-gold/5 blur-3xl" />
         <div className="max-w-3xl mx-auto px-6 lg:px-10 relative">

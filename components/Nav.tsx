@@ -16,10 +16,10 @@ export default function Nav() {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-green/95 backdrop-blur-md border-b border-gold/10">
-      <div className="max-w-7xl mx-auto px-6 lg:px-10 h-16 flex items-center justify-between">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-[#002820] border-b border-gold/10">
+      <div className="max-w-7xl mx-auto px-6 lg:px-10 h-20 flex items-center justify-between">
         <Link href="/" className="flex items-center">
-          <img src="/ekie-logo.png" alt="Ékié" className="h-16" />
+          <img src="/ekie-logo.png" alt="Ékié" className="h-20" />
         </Link>
 
         <ul className="hidden md:flex items-center gap-8">
@@ -52,7 +52,7 @@ export default function Nav() {
 
       {/* Mobile dropdown */}
       {open && (
-        <div className="md:hidden bg-green border-t border-gold/10 px-6 py-4">
+        <div className="md:hidden bg-[#002820] border-t border-gold/10 px-6 py-4">
           <ul className="flex flex-col gap-4">
             {links.map(l => (
               <li key={l.href}>

@@ -9,7 +9,7 @@ const config: Config = {
     extend: {
       colors: {
         green: { DEFAULT: '#0D3B2E', 2: '#0F4B39', dark: '#082720' },
-        gold: { DEFAULT: '#D4A937', light: '#E9C76B' },
+        gold: { DEFAULT: '#D4AF37', light: '#E9C76B' },
         cream: '#F8F6F1',
         mint: '#EEF7F2',
         coral: '#FCE8DF',

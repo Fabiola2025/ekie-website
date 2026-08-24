@@ -7,12 +7,12 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="bg-green text-white/70 pt-16 pb-8">
+    <footer className="bg-[#002820] text-white/70 pt-16 pb-8">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         <div className="grid md:grid-cols-4 gap-10 mb-12">
           {/* Brand */}
           <div>
-            <img src="/ekie-logo-full.svg" alt="Ékié" className="h-12 mb-3" />
+            <img src="/ekie-logo.png" alt="Ékié" className="h-14 mb-3" />
             <p className="text-sm text-white/55 leading-relaxed mb-3">{t.footer.tagline}</p>
             <p className="text-xs text-white/40">🇨🇲 🇺🇸 {t.footer.madeIn}</p>
           </div>
