@@ -1,7 +1,7 @@
 'use client';
 import { useState } from 'react';
 import { useLang } from '@/lib/LanguageProvider';
-import { Mail, MessageSquare, Briefcase } from 'lucide-react';
+import { Mail, MessageSquare, Briefcase, GraduationCap } from 'lucide-react';
 
 const FORM_ENDPOINT = 'https://formsubmit.co/ajax/hello@myekie.com';
 
@@ -179,6 +179,119 @@ export function ContactForm() {
           <Mail className="w-4 h-4" /> partners@myekie.com
         </a>
       </div>
+    </div>
+  );
+}
+
+// ============ SCHOOL FORM ============
+export function SchoolForm() {
+  const { t } = useLang();
+  const [form, setForm] = useState({
+    schoolName: '', contactName: '', role: '', location: '',
+    email: '', phone: '', students: '', schoolType: '', description: '',
+  });
+  const [submitting, setSubmitting] = useState(false);
+  const [done, setDone] = useState(false);
+
+  const onSubmit = async () => {
+    if (!form.schoolName || !form.contactName || !form.email || !form.phone) {
+      alert(t.school.required);
+      return;
+    }
+    setSubmitting(true);
+    await submitToFormsubmit({
+      subject: `New Ékié School Application: ${form.schoolName}`,
+      ...form,
+    });
+    setSubmitting(false);
+    setDone(true);
+    setForm({
+      schoolName: '', contactName: '', role: '', location: '',
+      email: '', phone: '', students: '', schoolType: '', description: '',
+    });
+    setTimeout(() => setDone(false), 8000);
+  };
+
+  return (
+    <div className="bg-white rounded-3xl shadow-soft border border-border p-8 lg:p-10">
+      <div className="flex items-center gap-3 mb-2">
+        <GraduationCap className="text-green w-6 h-6" />
+        <h3 className="font-display text-2xl text-green font-bold">{t.school.heading}</h3>
+      </div>
+      <p className="text-muted text-sm mb-6">{t.school.sub}</p>
+
+      <div className="grid sm:grid-cols-2 gap-4">
+        <input
+          className="input-base"
+          placeholder={t.school.schoolNamePlaceholder || t.school.schoolName}
+          value={form.schoolName}
+          onChange={e => setForm({ ...form, schoolName: e.target.value })}
+        />
+        <input
+          className="input-base"
+          placeholder={t.school.contactName}
+          value={form.contactName}
+          onChange={e => setForm({ ...form, contactName: e.target.value })}
+        />
+        <input
+          className="input-base"
+          placeholder={t.school.role}
+          value={form.role}
+          onChange={e => setForm({ ...form, role: e.target.value })}
+        />
+        <input
+          className="input-base"
+          placeholder={t.school.locationPlaceholder || t.school.location}
+          value={form.location}
+          onChange={e => setForm({ ...form, location: e.target.value })}
+        />
+        <input
+          className="input-base"
+          type="email"
+          placeholder={t.school.email}
+          value={form.email}
+          onChange={e => setForm({ ...form, email: e.target.value })}
+        />
+        <input
+          className="input-base"
+          placeholder={t.school.phonePlaceholder || t.school.phone}
+          value={form.phone}
+          onChange={e => setForm({ ...form, phone: e.target.value })}
+        />
+        <input
+          className="input-base"
+          placeholder={t.school.studentsPlaceholder || t.school.students}
+          value={form.students}
+          onChange={e => setForm({ ...form, students: e.target.value })}
+        />
+        <select
+          className="input-base"
+          value={form.schoolType}
+          onChange={e => setForm({ ...form, schoolType: e.target.value })}
+        >
+          {t.school.typeOptions.map((o: string, i: number) => (
+            <option key={i} value={i === 0 ? '' : o}>{o}</option>
+          ))}
+        </select>
+      </div>
+
+      <textarea
+        className="input-base mt-4"
+        rows={4}
+        placeholder={t.school.description}
+        value={form.description}
+        onChange={e => setForm({ ...form, description: e.target.value })}
+      />
+
+      <button
+        onClick={onSubmit}
+        disabled={submitting}
+        className="mt-5 w-full sm:w-auto bg-green text-white rounded-full px-8 py-3.5 text-sm font-bold hover:bg-green-2 transition-colors disabled:opacity-60"
+      >
+        {submitting ? '...' : t.school.submit}
+      </button>
+
+      {done && <p className="text-green text-sm mt-4 font-medium">{t.school.success}</p>}
     </div>
   );
 }

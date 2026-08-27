@@ -2,7 +2,7 @@
 import { Shield, Users, Zap, Smartphone, Heart, ArrowRight, Play, Bell, ArrowUpRight, CalendarDays, ShoppingBag, GraduationCap } from 'lucide-react';
 import Nav from '@/components/Nav';
 import Footer from '@/components/Footer';
-import { WaitlistForm, VendorForm, ContactForm } from '@/components/Forms';
+import { WaitlistForm, VendorForm, ContactForm, SchoolForm } from '@/components/Forms';
 import { useLang } from '@/lib/LanguageProvider';
 import Link from 'next/link';
 
@@ -349,6 +349,13 @@ export default function HomePage() {
       <section id="vendor" className="py-24 bg-mint/40">
         <div className="max-w-4xl mx-auto px-6 lg:px-10">
           <VendorForm />
+        </div>
+      </section>
+
+      {/* SCHOOLS */}
+      <section id="schools" className="py-24 bg-cream border-y border-border">
+        <div className="max-w-4xl mx-auto px-6 lg:px-10">
+          <SchoolForm />
         </div>
       </section>
 
