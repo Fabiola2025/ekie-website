@@ -1,0 +1,186 @@
+// lib/pay-i18n.ts — translations for /pay/[slug] flow
+// Kept separate from main i18n.ts to avoid touching the giant translations object.
+//
+// Import in components:
+//   import { payCopy } from '@/lib/pay-i18n';
+//   const c = payCopy[lang];  // where lang comes from useLang()
+
+export const payCopy = {
+  en: {
+    landing: {
+      heading: 'Pay School Fees',
+      subheading: 'Directly to the school. With a real receipt.',
+      poweredBy: 'Powered by Ékié',
+      trustBadge: 'Secure payment · CinetPay',
+
+      searchLabel: 'Enter student details',
+      studentIdLabel: 'Student ID',
+      studentIdPlaceholder: 'e.g. NUR001',
+      lastNameLabel: 'Parent or student last name',
+      lastNamePlaceholder: 'e.g. Fotso',
+      lookupBtn: 'Find student',
+      searching: 'Searching...',
+      notFound: 'No student found with that ID and last name. Please check with the school and try again.',
+
+      about: 'Ékié helps families pay Cameroonian schools directly — no middlemen, no lost cash, no guesswork. Every payment comes with a receipt.',
+    },
+
+    student: {
+      backToSearch: 'Back to search',
+      welcome: 'Welcome',
+      totalOwed: 'Total owed',
+      selectFees: 'Select fees to pay',
+      selectAll: 'Select all',
+      paying: 'You are paying',
+      serviceFee: 'Service fee',
+      ekieFee: 'Ékié fee',
+      cinetpayFee: 'MoMo processing',
+      youPay: 'You pay',
+      payerLabel: 'Your name (for receipt)',
+      payerPlaceholder: 'Full name',
+      phoneLabel: 'Your phone number',
+      phonePlaceholder: '+237 6XX XXX XXX',
+      emailLabel: 'Your email (optional, for receipt copy)',
+      emailPlaceholder: 'your@email.com',
+      payNow: 'Pay with MoMo',
+      preparingPayment: 'Preparing secure payment...',
+      redirectNote: 'You will be redirected to CinetPay to complete payment. This is normal and secure.',
+      minOne: 'Select at least one fee to continue.',
+      needName: 'Please enter your name.',
+      needPhone: 'Please enter your phone number.',
+      allPaid: 'All fees for this student have been paid. Nothing owing.',
+      fullyPaid: 'FULLY PAID',
+      partial: 'partial',
+    },
+
+    success: {
+      title: 'Payment Successful',
+      subtitle: 'Your payment has been received',
+      receiptNumber: 'Receipt number',
+      studentLabel: 'Student',
+      schoolLabel: 'School',
+      dateLabel: 'Paid on',
+      amountLabel: 'Amount paid',
+      breakdownLabel: 'Payment breakdown',
+      schoolReceives: 'School receives',
+      downloadReceipt: 'Save this page',
+      appPromo: {
+        heading: 'Get the Ékié app for your full payment history',
+        sub: 'View all past receipts, get instant payment notifications, and pay more schools from one place.',
+        appStore: 'Download on the App Store',
+        playStore: 'Get it on Google Play',
+      },
+      backToSchool: 'Pay for another child',
+    },
+
+    failed: {
+      title: 'Payment Not Completed',
+      subtitle: 'Your payment was not processed',
+      possibleReasons: 'This can happen if:',
+      reason1: 'You cancelled the payment',
+      reason2: 'Your MoMo account has insufficient funds',
+      reason3: 'The connection was interrupted',
+      reason4: 'Your bank or MoMo provider declined the transaction',
+      retry: 'Try again',
+      backToSchool: 'Back to school page',
+      support: 'Need help? Contact us at hello@myekie.com',
+      noCharge: 'No money has been charged to your account.',
+    },
+
+    notFound: {
+      title: 'School not found',
+      subtitle: "We couldn't find a school with that link.",
+      body: 'Please check the payment link your school gave you, or contact them for a new one. If you have the Ékié app, you can also search for your school there.',
+      backHome: 'Back to Ékié',
+    },
+  },
+
+  fr: {
+    landing: {
+      heading: 'Payer les frais de scolarité',
+      subheading: "Directement à l'école. Avec un vrai reçu.",
+      poweredBy: 'Propulsé par Ékié',
+      trustBadge: 'Paiement sécurisé · CinetPay',
+
+      searchLabel: "Entrez les informations de l'étudiant",
+      studentIdLabel: "Numéro d'étudiant",
+      studentIdPlaceholder: 'ex. NUR001',
+      lastNameLabel: "Nom de famille du parent ou de l'étudiant",
+      lastNamePlaceholder: 'ex. Fotso',
+      lookupBtn: "Rechercher l'étudiant",
+      searching: 'Recherche...',
+      notFound: "Aucun étudiant trouvé avec cet identifiant et ce nom. Vérifiez avec l'école et réessayez.",
+
+      about: "Ékié aide les familles à payer directement les écoles camerounaises — sans intermédiaires, sans argent perdu, sans incertitude. Chaque paiement vient avec un reçu.",
+    },
+
+    student: {
+      backToSearch: 'Retour à la recherche',
+      welcome: 'Bienvenue',
+      totalOwed: 'Total dû',
+      selectFees: 'Sélectionnez les frais à payer',
+      selectAll: 'Tout sélectionner',
+      paying: 'Vous payez',
+      serviceFee: 'Frais de service',
+      ekieFee: 'Frais Ékié',
+      cinetpayFee: 'Traitement MoMo',
+      youPay: 'Vous payez',
+      payerLabel: 'Votre nom (pour le reçu)',
+      payerPlaceholder: 'Nom complet',
+      phoneLabel: 'Votre numéro de téléphone',
+      phonePlaceholder: '+237 6XX XXX XXX',
+      emailLabel: 'Votre email (facultatif, pour recevoir le reçu)',
+      emailPlaceholder: 'votre@email.com',
+      payNow: 'Payer avec MoMo',
+      preparingPayment: 'Préparation du paiement sécurisé...',
+      redirectNote: 'Vous serez redirigé vers CinetPay pour terminer le paiement. Ceci est normal et sécurisé.',
+      minOne: 'Sélectionnez au moins un frais pour continuer.',
+      needName: 'Veuillez entrer votre nom.',
+      needPhone: 'Veuillez entrer votre numéro de téléphone.',
+      allPaid: 'Tous les frais pour cet étudiant ont été payés. Rien à devoir.',
+      fullyPaid: 'ENTIÈREMENT PAYÉ',
+      partial: 'partiel',
+    },
+
+    success: {
+      title: 'Paiement réussi',
+      subtitle: 'Votre paiement a été reçu',
+      receiptNumber: 'Numéro de reçu',
+      studentLabel: 'Étudiant',
+      schoolLabel: 'École',
+      dateLabel: 'Payé le',
+      amountLabel: 'Montant payé',
+      breakdownLabel: 'Détails du paiement',
+      schoolReceives: "L'école reçoit",
+      downloadReceipt: 'Enregistrer cette page',
+      appPromo: {
+        heading: "Obtenez l'application Ékié pour votre historique complet",
+        sub: "Consultez tous les reçus passés, recevez des notifications instantanées et payez plusieurs écoles depuis un seul endroit.",
+        appStore: "Télécharger sur l'App Store",
+        playStore: 'Disponible sur Google Play',
+      },
+      backToSchool: 'Payer pour un autre enfant',
+    },
+
+    failed: {
+      title: "Paiement non finalisé",
+      subtitle: "Votre paiement n'a pas été traité",
+      possibleReasons: 'Cela peut arriver si :',
+      reason1: 'Vous avez annulé le paiement',
+      reason2: 'Votre compte MoMo a des fonds insuffisants',
+      reason3: 'La connexion a été interrompue',
+      reason4: 'Votre banque ou opérateur MoMo a refusé la transaction',
+      retry: 'Réessayer',
+      backToSchool: "Retour à la page de l'école",
+      support: "Besoin d'aide ? Contactez-nous à hello@myekie.com",
+      noCharge: "Aucun montant n'a été débité de votre compte.",
+    },
+
+    notFound: {
+      title: 'École introuvable',
+      subtitle: "Nous n'avons pas trouvé d'école avec ce lien.",
+      body: "Vérifiez le lien de paiement que votre école vous a donné, ou contactez-la pour un nouveau lien. Si vous avez l'application Ékié, vous pouvez aussi y rechercher votre école.",
+      backHome: 'Retour à Ékié',
+    },
+  },
+} as const;
