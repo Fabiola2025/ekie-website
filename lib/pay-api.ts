@@ -126,6 +126,7 @@ export async function initiatePayment(input: {
   slug: string;
   studentId: string;
   feeItemIds: string[];
+  feeItemAmounts?: { [feeItemId: string]: number };
   payerName: string;
   payerPhone: string;
   payerEmail?: string;
@@ -137,6 +138,7 @@ export async function initiatePayment(input: {
       slug: input.slug,
       studentId: input.studentId,
       feeItemIds: input.feeItemIds,
+      feeItemAmounts: input.feeItemAmounts,
       payerName: input.payerName,
       payerPhone: input.payerPhone,
       payerEmail: input.payerEmail || undefined,

@@ -30,6 +30,9 @@ import {
   Phone,
   Mail,
   GraduationCap,
+  Pencil,
+  Check,
+  X,
 } from 'lucide-react';
 import Nav from '@/components/Nav';
 import Footer from '@/components/Footer';
@@ -67,6 +70,13 @@ export default function StudentPayPage() {
 
   // ── Selection state (fee item IDs selected for payment) ──
   const [selected, setSelected] = useState<Set<string>>(new Set());
+
+  // ── Custom amounts state (feeId -> custom amount in XAF) ──
+  // If a fee ID is not present, uses full balance owing.
+  const [customAmounts, setCustomAmounts] = useState<Map<string, number>>(new Map());
+  const [editingFeeId, setEditingFeeId] = useState<string | null>(null);
+  const [editValue, setEditValue] = useState('');
+  const [editError, setEditError] = useState('');
 
   // ── Payer info state ──
   const [payerName, setPayerName] = useState('');
@@ -134,11 +144,17 @@ export default function StudentPayPage() {
     });
   }, [fees, selected]);
 
+  // ── Effective amount per fee (custom or full owing) ──
+  const amountForFee = (feeId: string, owing: number): number => {
+    const custom = customAmounts.get(feeId);
+    return custom !== undefined ? custom : owing;
+  };
+
   // ── Derived: total selected + fee math ──
   const totals = useMemo(() => {
     const schoolAmount = feeBreakdown
       .filter((f) => f.isSelected)
-      .reduce((s, f) => s + f.owing, 0);
+      .reduce((s, f) => s + amountForFee(f.id, f.owing), 0);
     // 1.5% Ékié + 1% CinetPay MoMo (matches current fee model)
     // Real note: these RATES are display-only — server recomputes final
     // charge for security. Kept in sync with services/paymentConfig.ts
@@ -147,14 +163,78 @@ export default function StudentPayPage() {
     const cinetpayFee = Math.round(schoolAmount * 0.01);
     const totalCharged = schoolAmount + ekieFee + cinetpayFee;
     return { schoolAmount, ekieFee, cinetpayFee, totalCharged };
-  }, [feeBreakdown]);
+  }, [feeBreakdown, customAmounts]);
+
+  // ── Edit handlers ──
+  const startEdit = (feeId: string, currentOwing: number) => {
+    setEditError('');
+    const current = customAmounts.get(feeId);
+    setEditValue(current !== undefined ? String(Math.round(current)) : '');
+    setEditingFeeId(feeId);
+  };
+
+  const commitEdit = (feeId: string, balance: number) => {
+    const raw = editValue.trim();
+    if (!raw) {
+      // Empty -> clear custom, revert to full balance
+      setCustomAmounts((m) => {
+        const next = new Map(m);
+        next.delete(feeId);
+        return next;
+      });
+      setEditingFeeId(null);
+      setEditValue('');
+      setEditError('');
+      return;
+    }
+    const value = parseInt(raw, 10);
+    if (isNaN(value) || value <= 0) {
+      setEditError('Amount must be greater than 0');
+      return;
+    }
+    if (value > balance) {
+      setEditError(`Amount cannot exceed ${balance.toLocaleString()} XAF`);
+      return;
+    }
+    if (value === balance) {
+      setCustomAmounts((m) => {
+        const next = new Map(m);
+        next.delete(feeId);
+        return next;
+      });
+    } else {
+      setCustomAmounts((m) => {
+        const next = new Map(m);
+        next.set(feeId, value);
+        return next;
+      });
+    }
+    setEditingFeeId(null);
+    setEditValue('');
+    setEditError('');
+  };
+
+  const cancelEdit = () => {
+    setEditingFeeId(null);
+    setEditValue('');
+    setEditError('');
+  };
 
   // ── Toggle selection ──
   const toggle = (feeId: string) => {
     setSelected((prev) => {
       const next = new Set(prev);
-      if (next.has(feeId)) next.delete(feeId);
-      else next.add(feeId);
+      if (next.has(feeId)) {
+        next.delete(feeId);
+        // Clear any custom amount when unselecting
+        setCustomAmounts((m) => {
+          const nm = new Map(m);
+          nm.delete(feeId);
+          return nm;
+        });
+      } else {
+        next.add(feeId);
+      }
       return next;
     });
   };
@@ -189,10 +269,16 @@ export default function StudentPayPage() {
 
     setSubmitting(true);
     try {
+      // Build feeItemAmounts object from customAmounts Map (only fees with custom amounts)
+      const feeItemAmounts: { [k: string]: number } = {};
+      customAmounts.forEach((amt, feeId) => {
+        if (selected.has(feeId)) feeItemAmounts[feeId] = amt;
+      });
       const res = await initiatePayment({
         slug,
         studentId,
         feeItemIds: Array.from(selected),
+        feeItemAmounts: Object.keys(feeItemAmounts).length > 0 ? feeItemAmounts : undefined,
         payerName: payerName.trim(),
         payerPhone: payerPhone.trim(),
         payerEmail: payerEmail.trim() || undefined,
@@ -320,29 +406,29 @@ export default function StudentPayPage() {
                 <ul className="divide-y divide-border">
                   {feeBreakdown.map((f) => {
                     const disabled = f.isFullyPaid;
+                    const isEditing = editingFeeId === f.id;
+                    const hasCustom = customAmounts.has(f.id);
+                    const displayAmount = amountForFee(f.id, f.owing);
                     return (
-                      <li key={f.id}>
-                        <label
-                          className={`flex items-start gap-3 p-4 cursor-pointer transition-colors ${
-                            disabled
-                              ? 'opacity-50 cursor-not-allowed'
-                              : f.isSelected
-                              ? 'bg-mint/30'
-                              : 'hover:bg-cream/50'
-                          }`}
+                      <li key={f.id} className={disabled ? 'opacity-50' : f.isSelected ? 'bg-mint/30' : 'hover:bg-cream/50'}>
+                        {/* Top row: checkbox + name + amount */}
+                        <div
+                          onClick={() => !disabled && !isEditing && toggle(f.id)}
+                          className={`flex items-start gap-3 p-4 ${!disabled && !isEditing ? 'cursor-pointer' : ''}`}
                         >
                           <input
                             type="checkbox"
                             checked={f.isSelected}
                             disabled={disabled}
                             onChange={() => toggle(f.id)}
+                            onClick={(e) => e.stopPropagation()}
                             className="mt-1 w-5 h-5 rounded border-2 border-border text-green focus:ring-green/30 accent-green"
                           />
                           <div className="flex-1 min-w-0">
                             <div className="flex items-center justify-between gap-2">
                               <p className="font-medium text-ink truncate">{f.fee_name}</p>
                               <p className="text-sm font-bold text-ink flex-shrink-0">
-                                {formatXAF(f.owing)}
+                                {formatXAF(displayAmount)}
                               </p>
                             </div>
                             {f.paidNum > 0 && !f.isFullyPaid && (
@@ -356,7 +442,72 @@ export default function StudentPayPage() {
                               </p>
                             )}
                           </div>
-                        </label>
+                        </div>
+
+                        {/* Bottom row: edit controls (only when selected + not fully paid) */}
+                        {f.isSelected && !f.isFullyPaid && (
+                          <div className="px-4 pb-4 pl-12">
+                            {isEditing ? (
+                              <div className="space-y-2">
+                                <div className="flex gap-2 items-center">
+                                  <input
+                                    type="text"
+                                    inputMode="numeric"
+                                    value={editValue}
+                                    onChange={(e) => {
+                                      setEditValue(e.target.value.replace(/[^0-9]/g, ''));
+                                      setEditError('');
+                                    }}
+                                    placeholder={String(f.owing)}
+                                    autoFocus
+                                    className="flex-1 px-3 py-2 rounded-lg border border-green bg-white focus:outline-none focus:ring-2 focus:ring-green/20 text-ink"
+                                  />
+                                  <button
+                                    type="button"
+                                    onClick={() => commitEdit(f.id, f.owing)}
+                                    className="p-2 rounded-lg bg-green text-white hover:bg-green-2"
+                                    aria-label="Save"
+                                  >
+                                    <Check size={16} />
+                                  </button>
+                                  <button
+                                    type="button"
+                                    onClick={cancelEdit}
+                                    className="p-2 rounded-lg border border-border text-muted hover:bg-cream"
+                                    aria-label="Cancel"
+                                  >
+                                    <X size={16} />
+                                  </button>
+                                </div>
+                                <p className="text-xs text-muted">Max: {formatXAF(f.owing)}</p>
+                                {editError && (
+                                  <p className="text-xs text-red-600">{editError}</p>
+                                )}
+                              </div>
+                            ) : hasCustom ? (
+                              <div className="flex items-center justify-between gap-2">
+                                <p className="text-xs text-green font-medium">
+                                  Paying {formatXAF(displayAmount)} of {formatXAF(f.owing)}
+                                </p>
+                                <button
+                                  type="button"
+                                  onClick={() => startEdit(f.id, f.owing)}
+                                  className="text-xs text-green hover:text-green-2 font-semibold flex items-center gap-1"
+                                >
+                                  <Pencil size={12} /> Edit
+                                </button>
+                              </div>
+                            ) : (
+                              <button
+                                type="button"
+                                onClick={() => startEdit(f.id, f.owing)}
+                                className="text-xs text-muted hover:text-green flex items-center gap-1"
+                              >
+                                <Pencil size={12} /> Change amount
+                              </button>
+                            )}
+                          </div>
+                        )}
                       </li>
                     );
                   })}
