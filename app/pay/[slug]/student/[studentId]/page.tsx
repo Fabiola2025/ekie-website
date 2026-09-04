@@ -49,12 +49,28 @@ import {
   type FeeItem,
 } from '@/lib/pay-api';
 import { payCopy } from '@/lib/pay-i18n';
+import CountryPicker from '@/components/CountryPicker';
+import FeeBreakdownCard from '@/components/FeeBreakdownCard';
+import { useCountry } from '@/lib/useCountry';
+import { computeFeesSync, fetchRateForCountry, type FeeBreakdown } from '@/lib/pay-fees';
+import type { FxRate } from '@/lib/fx';
 
 export default function StudentPayPage() {
   const params = useParams();
   const search = useSearchParams();
   const router = useRouter();
   const { lang } = useLang();
+  const { country } = useCountry();
+  const [fxRate, setFxRate] = useState<FxRate | null>(null);
+
+  // Fetch FX rate whenever country changes. Null for Cameroon or if fetch fails.
+  useEffect(() => {
+    let cancelled = false;
+    fetchRateForCountry(country).then((r) => {
+      if (!cancelled) setFxRate(r);
+    });
+    return () => { cancelled = true; };
+  }, [country]);
   const c = payCopy[lang];
 
   const slug = (Array.isArray(params.slug) ? params.slug[0] : params.slug) as string;
@@ -159,11 +175,8 @@ export default function StudentPayPage() {
     // Real note: these RATES are display-only — server recomputes final
     // charge for security. Kept in sync with services/paymentConfig.ts
     // in ekie-app. If rates change there, update here too.
-    const ekieFee = Math.round(schoolAmount * 0.015);
-    const cinetpayFee = Math.round(schoolAmount * 0.01);
-    const totalCharged = schoolAmount + ekieFee + cinetpayFee;
-    return { schoolAmount, ekieFee, cinetpayFee, totalCharged };
-  }, [feeBreakdown, customAmounts]);
+    return computeFeesSync(schoolAmount, country, fxRate);
+  }, [feeBreakdown, customAmounts, country, fxRate]);
 
   // ── Edit handlers ──
   const startEdit = (feeId: string, currentOwing: number) => {
@@ -353,6 +366,12 @@ export default function StudentPayPage() {
               <ArrowLeft size={16} />
               {c.student.backToSearch}
             </Link>
+
+            {/* Country picker chip — where the payer is paying from (currency + payment method) */}
+            <div className="mb-4 flex justify-end">
+              <CountryPicker />
+            </div>
+
             <div className="flex items-start gap-4">
               <div className="w-14 h-14 flex-shrink-0 rounded-xl bg-white shadow-soft flex items-center justify-center">
                 <GraduationCap className="w-7 h-7 text-green" strokeWidth={2} />
@@ -514,31 +533,9 @@ export default function StudentPayPage() {
                 </ul>
               </div>
 
-              {/* Payment breakdown card */}
-              {selected.size > 0 && (
-                <div className="bg-white rounded-2xl shadow-card border border-border p-5 space-y-2">
-                  <p className="text-xs uppercase tracking-wide text-muted mb-2">
-                    {c.student.paying}
-                  </p>
-                  <div className="flex justify-between text-sm">
-                    <span className="text-ink">School receives</span>
-                    <span className="font-semibold text-ink">{formatXAF(totals.schoolAmount)}</span>
-                  </div>
-                  <div className="flex justify-between text-sm">
-                    <span className="text-muted">{c.student.ekieFee} (1.5%)</span>
-                    <span className="text-muted">{formatXAF(totals.ekieFee)}</span>
-                  </div>
-                  <div className="flex justify-between text-sm">
-                    <span className="text-muted">{c.student.cinetpayFee} (1%)</span>
-                    <span className="text-muted">{formatXAF(totals.cinetpayFee)}</span>
-                  </div>
-                  <div className="border-t border-border pt-3 mt-3 flex justify-between items-baseline">
-                    <span className="text-ink font-semibold">{c.student.youPay}</span>
-                    <span className="font-display text-2xl text-green font-bold">
-                      {formatXAF(totals.totalCharged)}
-                    </span>
-                  </div>
-                </div>
+              {/* Payment breakdown card — currency-aware based on payer country */}
+              {selected.size > 0 && totals && (
+                <FeeBreakdownCard breakdown={totals} />
               )}
 
               {/* Payer form */}

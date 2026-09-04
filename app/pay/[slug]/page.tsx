@@ -24,6 +24,7 @@ import Footer from '@/components/Footer';
 import { useLang } from '@/lib/LanguageProvider';
 import { fetchSchool, fetchStudent, type School } from '@/lib/pay-api';
 import { payCopy } from '@/lib/pay-i18n';
+import CountryPicker from '@/components/CountryPicker';
 
 export default function PayLandingPage() {
   const params = useParams();
@@ -152,6 +153,11 @@ export default function PayLandingPage() {
               <span className="text-xs font-semibold text-green">
                 {c.landing.poweredBy}
               </span>
+            </div>
+
+            {/* Country picker — where the payer is paying from */}
+            <div className="mt-4 flex justify-center">
+              <CountryPicker />
             </div>
           </div>
         </section>

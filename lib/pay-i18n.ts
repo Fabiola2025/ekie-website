@@ -93,6 +93,20 @@ export const payCopy = {
       body: 'Please check the payment link your school gave you, or contact them for a new one. If you have the Ékié app, you can also search for your school there.',
       backHome: 'Back to Ékié',
     },
+    countryPicker: {
+      payingFrom: 'Paying from',
+      change: 'Change',
+      modalTitle: 'Where are you paying from?',
+      modalSubtitle: 'This determines your payment currency and available methods.',
+      cameroon: 'In Cameroon',
+      diaspora: 'Outside Cameroon',
+      confirm: 'Continue',
+      close: 'Cancel',
+      autoDetected: 'Auto-detected',
+      approximateCost: '≈',
+      finalRateNote: "Final amount depends on your card's exchange rate at time of charge.",
+    },
+
   },
 
   fr: {
@@ -182,5 +196,19 @@ export const payCopy = {
       body: "Vérifiez le lien de paiement que votre école vous a donné, ou contactez-la pour un nouveau lien. Si vous avez l'application Ékié, vous pouvez aussi y rechercher votre école.",
       backHome: 'Retour à Ékié',
     },
+    countryPicker: {
+      payingFrom: 'Vous payez depuis',
+      change: 'Modifier',
+      modalTitle: "D'où effectuez-vous ce paiement ?",
+      modalSubtitle: 'Cela détermine la devise et les modes de paiement disponibles.',
+      cameroon: 'Au Cameroun',
+      diaspora: 'Hors du Cameroun',
+      confirm: 'Continuer',
+      close: 'Annuler',
+      autoDetected: 'Détecté automatiquement',
+      approximateCost: '≈',
+      finalRateNote: 'Le montant final dépend du taux de change de votre carte au moment du paiement.',
+    },
+
   },
 } as const;
