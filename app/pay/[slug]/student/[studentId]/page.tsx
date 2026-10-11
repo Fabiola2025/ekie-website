@@ -620,7 +620,7 @@ export default function StudentPayPage() {
                   ) : (
                     <>
                       {c.student.payNow}
-                      {selected.size > 0 && <span>· {formatXAF(totals.totalCharged)}</span>}
+                      {selected.size > 0 && <span>· {formatXAF(totals.totalXaf)}</span>}
                     </>
                   )}
                 </button>
