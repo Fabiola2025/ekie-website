@@ -376,10 +376,10 @@ export const translations = {
       ctaButton: 'Join the waitlist',
     },
     legal: {
-      privacy: { title: 'Privacy Policy', lastUpdated: 'Last updated: June 2026' },
-      terms: { title: 'Terms of Service', lastUpdated: 'Last updated: June 2026' },
-      cookies: { title: 'Cookie Policy', lastUpdated: 'Last updated: June 2026' },
-      security: { title: 'Security', lastUpdated: 'Last updated: June 2026' },
+      privacy: { title: 'Privacy Policy', lastUpdated: 'Last updated: October 2026' },
+      terms: { title: 'Terms of Service', lastUpdated: 'Last updated: October 2026' },
+      cookies: { title: 'Cookie Policy', lastUpdated: 'Last updated: October 2026' },
+      security: { title: 'Security', lastUpdated: 'Last updated: October 2026' },
     },
   },
   fr: {
@@ -756,10 +756,10 @@ export const translations = {
       ctaButton: 'Rejoindre la liste',
     },
     legal: {
-      privacy: { title: 'Politique de confidentialité', lastUpdated: 'Dernière mise à jour : juin 2026' },
-      terms: { title: 'Conditions d\'utilisation', lastUpdated: 'Dernière mise à jour : juin 2026' },
-      cookies: { title: 'Politique de cookies', lastUpdated: 'Dernière mise à jour : juin 2026' },
-      security: { title: 'Sécurité', lastUpdated: 'Dernière mise à jour : juin 2026' },
+      privacy: { title: 'Politique de confidentialité', lastUpdated: 'Dernière mise à jour : octobre 2026' },
+      terms: { title: 'Conditions d\'utilisation', lastUpdated: 'Dernière mise à jour : octobre 2026' },
+      cookies: { title: 'Politique de cookies', lastUpdated: 'Dernière mise à jour : octobre 2026' },
+      security: { title: 'Sécurité', lastUpdated: 'Dernière mise à jour : octobre 2026' },
     },
   },
 };
