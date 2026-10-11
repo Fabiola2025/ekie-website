@@ -20,7 +20,7 @@ export const dynamic = 'force-dynamic';
 
 export async function GET() {
   try {
-    const hdrs = headers();
+    const hdrs = await headers();
     const info = detectCountryFromVercelHeaders(hdrs);
     return Response.json({
       code: info.code,
