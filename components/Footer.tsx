@@ -37,6 +37,7 @@ export default function Footer() {
               <li><Link href="/#about" className="hover:text-gold transition-colors">{t.footer.companyLinks.about}</Link></li>
               <li><Link href="/#contact" className="hover:text-gold transition-colors">{t.footer.companyLinks.contact}</Link></li>
               <li><Link href="/#vendor" className="hover:text-gold transition-colors">{t.footer.companyLinks.vendor}</Link></li>
+              <li><Link href="/careers" className="hover:text-gold transition-colors">{t.footer.companyLinks.careers}</Link></li>
               <li className="pt-3 text-xs text-white/40 space-y-1">
                 <div><a href="mailto:hello@myekie.com" className="hover:text-gold">hello@myekie.com</a></div>
                 <div><a href="mailto:support@myekie.com" className="hover:text-gold">support@myekie.com</a></div>

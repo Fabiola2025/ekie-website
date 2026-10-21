@@ -245,6 +245,7 @@ export const translations = {
         whyEkie: 'Why Ékié',
         contact: 'Contact',
         vendor: 'Become a vendor',
+        careers: 'Careers',
       },
       legal: 'Legal',
       legalLinks: {
@@ -626,6 +627,7 @@ export const translations = {
         whyEkie: 'Pourquoi Ékié',
         contact: 'Contact',
         vendor: 'Devenir commerçant',
+        careers: 'Carrières',
       },
       legal: 'Légal',
       legalLinks: {
