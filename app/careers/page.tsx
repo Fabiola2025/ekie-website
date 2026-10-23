@@ -167,7 +167,7 @@ export default function CareersPage() {
                 </div>
 
                 <a
-                  href={`mailto:admin@myekie.com?subject=${subject}%20—%20${encodeURIComponent(role.title)}`}
+                  href={`mailto:careers@myekie.com?subject=${subject}%20—%20${encodeURIComponent(role.title)}`}
                   className="inline-flex shrink-0 items-center justify-center rounded-full bg-[#0D3B2E] px-6 py-3 text-sm font-semibold text-[#DCAE33] transition-transform hover:scale-[1.03] hover:bg-[#0E7C6B]"
                 >
                   Apply
@@ -275,7 +275,7 @@ export default function CareersPage() {
             carry a piece of Ékié we have not yet written down, write to us.
           </p>
           <a
-            href={`mailto:admin@myekie.com?subject=${subject}%20—%20General`}
+            href={`mailto:careers@myekie.com?subject=${subject}%20—%20General`}
             className="mt-6 inline-flex items-center justify-center rounded-full bg-[#DCAE33] px-7 py-3 text-sm font-semibold text-[#0D3B2E] transition-transform hover:scale-[1.03]"
           >
             Reach out
@@ -283,7 +283,7 @@ export default function CareersPage() {
         </div>
 
         <p className="mt-16 text-center text-xs text-[#0D3B2E]/50">
-          Ékié · EKIE LTD, Yaoundé · admin@myekie.com
+          Ékié · EKIE LTD, Yaoundé · careers@myekie.com
         </p>
       </section>
 
