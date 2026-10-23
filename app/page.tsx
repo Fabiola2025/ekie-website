@@ -15,6 +15,7 @@ export default function HomePage() {
   { id: 'bookings', emoji: '📅', title: t.services.bookings.title, sub: t.services.bookings.sub, color: 'bg-[#F1ECFF]', accent: 'text-[#6D28D9]', badge: t.services.badges.launchingSep, badgeType: 'launch' },
   { id: 'akao', emoji: '💚', title: t.services.akao.title, sub: t.services.akao.sub, color: 'bg-mint', accent: 'text-green', badge: t.services.badges.comingNov, badgeType: 'soon' },
   { id: 'marketplace', emoji: '🛒', title: t.services.marketplace.title, sub: t.services.marketplace.sub, color: 'bg-coral', accent: 'text-[#C2410C]', badge: t.services.badges.comingNov, badgeType: 'soon' },
+  { id: 'care-circles', emoji: '🫂', title: 'Care Circles', sub: 'Share the care — pay together for the people you love', color: 'bg-mint', accent: 'text-green', badge: 'Coming soon', badgeType: 'soon' },
 ];
 
   const businessCards = [
@@ -58,6 +59,10 @@ export default function HomePage() {
               <h1 className="font-display text-4xl md:text-5xl lg:text-[64px] font-black text-green leading-[1.05] mb-5 tracking-tight">
                 {t.hero.title} <span className="text-gold">{t.hero.titleAccent}</span>
               </h1>
+
+              <p className="font-display text-xl md:text-2xl italic text-gold mb-5 tracking-wide">
+                Your world, cared for.
+              </p>
 
               <p className="text-lg text-muted leading-relaxed mb-7 max-w-md">{t.hero.copy}</p>
 

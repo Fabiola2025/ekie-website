@@ -246,6 +246,41 @@ export default function WhyEkiePage() {
             </div>
           </section>
 
+          {/* Section 7 — The next layer: Care Circles */}
+          <section className="mb-14">
+            <h2 className="font-display text-2xl md:text-3xl font-black text-green leading-tight mb-6">
+              The next layer: Care Circles
+            </h2>
+            <div className="prose-content space-y-5 text-ink text-lg leading-relaxed">
+              <p>I kept noticing something, over and over.</p>
+              <p>
+                A sister would call her brother to send money for their mother. The brother would call the cousin, because he was short that month. The cousin would call the aunt in Paris, because she was already sending anyway. One parent, four kids, three continents, one unspoken question: <strong className="text-green">who paid what, and when, and how do we not keep doing this with our fingers crossed?</strong>
+              </p>
+              <p>
+                Care, in a Cameroonian family, is almost never a solo act. It is a quiet rotation. A chorus. A circle. And right now that circle runs on WhatsApp screenshots, memory, and the kind of generosity that quietly keeps score so no one is embarrassed.
+              </p>
+              <p>I wanted to give that circle a tool of its own.</p>
+              <p className="font-bold text-green text-xl md:text-2xl italic border-l-4 border-gold pl-5 my-8">
+                Care Circles is the next layer we are building into Ékié.
+              </p>
+              <p>
+                A space where a group — siblings, co-parents, cousins, extended family — can come together to carry a single beneficiary. One parent&apos;s monthly care. One child&apos;s school year. One aunt&apos;s medication. One elder&apos;s household bills. Everyone sees what has been paid, what is coming up next, and whose turn it is to carry the load this month. The rotation becomes visible, honored, shared.
+              </p>
+              <p>
+                It is still Ékié&apos;s trust layer underneath — same verified vendors, same photo proof, same purpose-locked payments. What changes is that nobody carries alone anymore.
+              </p>
+              <p>
+                Because the truth is, nobody built for us. Not for how we actually give. Not for how we actually love.
+              </p>
+              <p className="font-bold text-green text-xl md:text-2xl italic mt-6">
+                So we built it.
+              </p>
+              <p className="font-bold text-gold text-xl md:text-2xl italic border-l-4 border-gold pl-5 my-8">
+                Your world, cared for.
+              </p>
+            </div>
+          </section>
+
           {/* CTA */}
           <section className="mt-16 pt-12 border-t border-border text-center">
             <h3 className="font-display text-xl md:text-2xl font-black text-green mb-3">
