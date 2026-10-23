@@ -32,6 +32,12 @@ const ROLES = [
       'Trustworthy under pressure — this role sees the money move',
       'Based in Yaoundé or Douala, or ready to relocate',
     ],
+    setup: [
+      'Your own reliable laptop (Windows, macOS, or Linux)',
+      'Stable home internet (fibre, LTE/4G, or reliable DSL — not shared mobile data)',
+      'External monitor (we review a lot of dashboards side-by-side)',
+      'Quiet workspace for calls and partner meetings',
+    ],
   },
   {
     title: 'Marketing & Community Lead',
@@ -56,6 +62,12 @@ const ROLES = [
       'A nose for what Cameroonians actually share with each other',
       'Patience for a product that moves at the speed of trust',
     ],
+    setup: [
+      'Your own reliable laptop (Windows, macOS, or Linux)',
+      'Stable home internet (fibre, LTE/4G, or reliable DSL — not shared mobile data)',
+      'Smartphone with a capable camera (short-form video is a core deliverable)',
+      'Quiet workspace for recordings and community calls',
+    ],
   },
   {
     title: 'Customer Care Associate',
@@ -77,6 +89,12 @@ const ROLES = [
       'Prior customer-facing experience in fintech, telco, or a professional service',
       'Reliable 9am–1pm WAT availability, Monday through Friday',
       'Honesty when you do not know the answer — we will teach you the rest',
+    ],
+    setup: [
+      'Your own reliable laptop (Windows, macOS, or Linux)',
+      'Stable home internet (fibre, LTE/4G, or reliable DSL — not shared mobile data)',
+      'Headset with a clear microphone (for voice calls)',
+      'Quiet workspace during coverage hours (9am–1pm WAT, Mon–Fri)',
     ],
   },
 ];
@@ -188,6 +206,23 @@ export default function CareersPage() {
                   </ul>
                 </div>
               </div>
+
+              {/* Setup requirements — equipment + working conditions */}
+              {role.setup && (
+                <div className="mt-8 rounded-2xl bg-[#F7F6F1] p-6 sm:p-7 border border-[#0D3B2E]/5">
+                  <h4 className="text-xs font-semibold uppercase tracking-widest text-[#0D3B2E]/60">
+                    Setup you need
+                  </h4>
+                  <ul className="mt-3 grid gap-2 sm:grid-cols-2 text-sm leading-relaxed text-[#0D3B2E]/85">
+                    {role.setup.map((s) => (
+                      <li key={s} className="flex gap-2">
+                        <span className="mt-1.5 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-[#DCAE33]" />
+                        <span>{s}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
             </article>
           ))}
         </div>
