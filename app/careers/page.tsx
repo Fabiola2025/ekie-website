@@ -113,6 +113,12 @@ export default function CareersPage() {
         </div>
 
         <div className="relative mx-auto max-w-5xl px-6 py-24 sm:py-32">
+          <Link
+            href="/"
+            className="mb-8 inline-flex items-center gap-2 text-sm font-medium text-[#F7F6F1]/70 transition-colors hover:text-[#DCAE33]"
+          >
+            <span aria-hidden>←</span> Back to home
+          </Link>
           <p className="text-sm font-medium uppercase tracking-[0.2em] text-[#DCAE33]">
             Join us
           </p>

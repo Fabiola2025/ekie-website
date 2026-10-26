@@ -226,6 +226,8 @@ export const translations = {
       sub: 'Ékié launches soon in Cameroon. Be one of the first to send outcomes instead of cash.',
       download: 'Join the waitlist',
       business: 'Apply as a vendor',
+      googlePlay: 'Get it on Google Play',
+      iosSoon: 'iPhone version coming soon',
     },
     footer: {
       tagline: 'Trust infrastructure for African families.',
@@ -608,6 +610,8 @@ export const translations = {
       sub: 'Ékié lance bientôt au Cameroun. Soyez parmi les premiers à envoyer des résultats au lieu d\'argent.',
       download: 'Rejoindre la liste',
       business: 'Postuler comme commerçant',
+      googlePlay: 'Disponible sur Google Play',
+      iosSoon: 'Version iPhone bientôt disponible',
     },
     footer: {
       tagline: 'Infrastructure de confiance pour les familles africaines.',
