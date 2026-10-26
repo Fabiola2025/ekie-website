@@ -32,6 +32,8 @@ export function WaitlistForm() {
       email,
       subject: 'New Ékié Waitlist Signup',
       message: `New waitlist signup: ${email}`,
+      _autoresponse:
+        "You're on the Ékié waitlist — thank you! We'll let you know the moment you can get started.\n\nWith care,\nThe Ékié Team\nYour world, cared for.\nhttps://myekie.com",
     });
     setSubmitting(false);
     setDone(true);
@@ -80,6 +82,8 @@ export function VendorForm() {
     await submitToFormsubmit({
       subject: `New Ékié Vendor Application: ${form.business}`,
       ...form,
+      _autoresponse:
+        "Thank you for applying to sell on Ékié. We've received your application and will review it carefully. If it's a good fit, we'll reach out with next steps.\n\nWith care,\nThe Ékié Team\nYour world, cared for.\nhttps://myekie.com",
     });
     setSubmitting(false);
     setDone(true);
@@ -135,6 +139,8 @@ export function ContactForm() {
     await submitToFormsubmit({
       subject: `Ékié Contact: ${form.type || 'General'} — ${form.name}`,
       ...form,
+      _autoresponse:
+        "Thanks for reaching out to Ékié. We've received your message and will get back to you shortly.\n\nWith care,\nThe Ékié Team\nYour world, cared for.\nhttps://myekie.com",
     });
     setSubmitting(false);
     setDone(true);
@@ -202,6 +208,8 @@ export function SchoolForm() {
     await submitToFormsubmit({
       subject: `New Ékié School Application: ${form.schoolName}`,
       ...form,
+      _autoresponse:
+        "Thank you for your interest in bringing Ékié to your school. We've received your application and will be in touch soon.\n\nWith care,\nThe Ékié Team\nYour world, cared for.\nhttps://myekie.com",
     });
     setSubmitting(false);
     setDone(true);
