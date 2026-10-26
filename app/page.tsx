@@ -378,15 +378,30 @@ export default function HomePage() {
         <div className="max-w-3xl mx-auto px-6 lg:px-10 relative">
           <h2 className="font-display text-3xl md:text-5xl font-black mb-4 leading-tight">{t.cta.heading}</h2>
           <p className="text-white/70 text-lg mb-8 leading-relaxed">{t.cta.sub}</p>
-          <div className="flex flex-wrap justify-center gap-3">
-            <a href="https://play.google.com/store/apps/details?id=com.ekie.app" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-gold text-green rounded-full px-7 py-3.5 text-sm font-bold hover:scale-[1.02] active:scale-95 transition-transform">
-              {t.cta.googlePlay}
+          <div className="flex flex-wrap justify-center items-center gap-4">
+            <a
+              href="https://play.google.com/store/apps/details?id=com.ekie.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Get it on Google Play"
+              className="inline-block rounded-xl shadow-lg hover:scale-[1.04] active:scale-95 transition-transform"
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/badge-google-play.png" alt="Get it on Google Play" className="h-14 w-auto block" />
             </a>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/badge-app-store.png"
+              alt="Download on the App Store — coming soon"
+              className="h-14 w-auto block opacity-40"
+            />
+          </div>
+          <p className="text-white/50 text-xs mt-4">{t.cta.iosSoon}</p>
+          <div className="mt-6">
             <a href="#vendor" className="inline-flex items-center gap-2 border border-white/25 text-white hover:bg-white/5 rounded-full px-7 py-3.5 text-sm font-medium transition-colors">
               {t.cta.business}
             </a>
           </div>
-          <p className="text-white/50 text-xs mt-4">{t.cta.iosSoon}</p>
         </div>
       </section>
 
