@@ -1,5 +1,5 @@
 'use client';
-import { Shield, Users, Zap, Smartphone, Heart, ArrowRight, Play, Bell, ArrowUpRight, CalendarDays, ShoppingBag, GraduationCap } from 'lucide-react';
+import { Shield, Users, Zap, Smartphone, Heart, ArrowRight, Play, Bell, Home, CreditCard, User } from 'lucide-react';
 import Nav from '@/components/Nav';
 import Footer from '@/components/Footer';
 import { WaitlistForm, VendorForm, ContactForm, SchoolForm } from '@/components/Forms';
@@ -11,11 +11,11 @@ export default function HomePage() {
 
   const serviceCards = [
   { id: 'school-fees', emoji: '🎓', title: t.services.schoolFees.title, sub: t.services.schoolFees.sub, color: 'bg-[#FEF3D7]', accent: 'text-[#92400E]', badge: t.services.badges.launchingSep, badgeType: 'launch' },
+  { id: 'marketplace', emoji: '🛒', title: t.services.marketplace.title, sub: t.services.marketplace.sub, color: 'bg-coral', accent: 'text-[#C2410C]', badge: t.services.badges.launchingSep, badgeType: 'launch' },
   { id: 'skip-the-queue', emoji: '⚡', title: t.services.skipTheQueue.title, sub: t.services.skipTheQueue.sub, color: 'bg-[#FFE8D6]', accent: 'text-[#B45309]', badge: t.services.badges.launchingSep, badgeType: 'launch' },
   { id: 'bookings', emoji: '📅', title: t.services.bookings.title, sub: t.services.bookings.sub, color: 'bg-[#F1ECFF]', accent: 'text-[#6D28D9]', badge: t.services.badges.launchingSep, badgeType: 'launch' },
   { id: 'akao', emoji: '💚', title: t.services.akao.title, sub: t.services.akao.sub, color: 'bg-mint', accent: 'text-green', badge: t.services.badges.comingNov, badgeType: 'soon' },
-  { id: 'marketplace', emoji: '🛒', title: t.services.marketplace.title, sub: t.services.marketplace.sub, color: 'bg-coral', accent: 'text-[#C2410C]', badge: t.services.badges.comingNov, badgeType: 'soon' },
-  { id: 'care-circles', emoji: '🫂', title: 'Care Circles', sub: 'Share the care — pay together for the people you love', color: 'bg-mint', accent: 'text-green', badge: 'Coming soon', badgeType: 'soon' },
+  { id: 'care-circles', emoji: '🫂', title: 'Care Circles', sub: 'Share the care — pay together for the people you love', color: 'bg-mint', accent: 'text-green', badge: t.services.badges.comingNov, badgeType: 'soon' },
 ];
 
   const businessCards = [
@@ -207,7 +207,7 @@ export default function HomePage() {
       <section className="bg-green py-10">
         <div className="max-w-7xl mx-auto px-6 lg:px-10 grid grid-cols-2 md:grid-cols-4 gap-6 text-center md:text-left">
           {[
-            { num: 'Sep 2026', label: 'Launch date', icon: '🚀' },
+            { num: 'Live', label: 'On Google Play', icon: '🚀' },
             { num: 'Verified', label: 'Every vendor', icon: '✅' },
             { num: 'Direct', label: 'To source', icon: '🎯' },
             { num: 'Built', label: 'For Cameroon', icon: '🇨🇲' },
@@ -220,6 +220,41 @@ export default function HomePage() {
               </div>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* ══════ CORRIDORS — who we serve ══════ */}
+      <section className="py-16 md:py-24 bg-white border-y border-border">
+        <div className="max-w-5xl mx-auto px-6 md:px-8">
+          <div className="text-center mb-10">
+            <div className="inline-flex items-center gap-2 bg-green/5 border border-green/15 rounded-full px-4 py-1.5 mb-5">
+              <span className="text-xs font-bold text-green uppercase tracking-wider">{t.corridors.eyebrow}</span>
+            </div>
+            <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-black text-green mb-4 leading-tight">
+              {t.corridors.heading}
+            </h2>
+            <p className="text-muted text-lg max-w-2xl mx-auto leading-relaxed">{t.corridors.sub}</p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-5">
+            {/* Send from */}
+            <div className="bg-cream rounded-2xl p-6 border border-border">
+              <div className="text-xs font-bold text-green uppercase tracking-wider mb-2">{t.corridors.sendFromLabel}</div>
+              <div className="text-xl md:text-2xl font-display font-bold text-ink mb-3 leading-tight">
+                {t.corridors.sendFromList}
+              </div>
+              <p className="text-xs text-muted italic">{t.corridors.sendFromNote}</p>
+            </div>
+
+            {/* Receive in */}
+            <div className="bg-mint/40 rounded-2xl p-6 border border-green/15">
+              <div className="text-xs font-bold text-green uppercase tracking-wider mb-2">{t.corridors.receiveInLabel}</div>
+              <div className="text-xl md:text-2xl font-display font-bold text-green mb-3 leading-tight">
+                {t.corridors.receiveInList}
+              </div>
+              <p className="text-xs text-green/80 italic">{t.corridors.receiveInNote}</p>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -436,78 +471,109 @@ function MobileFeatureCard({ emoji, title, sub, iconBg }: { emoji: string; title
   );
 }
 
-// ── Phone mockup (inline; same content as before but cleaner without external float cards) ───
+// ── Phone mockup (inline; mirrors the real Ékié app home screen) ───
 function PhoneInline() {
   return (
     <div className="relative" style={{ width: 270 }}>
       <div className="absolute -inset-8 bg-gradient-to-br from-gold/20 to-mint/30 rounded-full blur-2xl -z-10" />
       <div className="bg-ink rounded-[40px] p-3 shadow-card border border-white/10 relative z-10">
-        <div className="bg-cream rounded-[32px] overflow-hidden" style={{ height: 540 }}>
-          {/* Status bar */}
-          <div className="px-5 pt-3 pb-1 flex justify-between items-center text-[10px] text-ink/70">
-            <span>9:41</span><span>•••</span>
-          </div>
-          {/* Header */}
-          <div className="px-5 pt-2 flex justify-between items-center">
-            <div>
-              <div className="text-[10px] text-muted">Good morning 👋</div>
-              <div className="text-base font-bold text-ink">Fabiola</div>
+        <div className="bg-cream rounded-[32px] overflow-hidden flex flex-col" style={{ height: 540 }}>
+
+          {/* ═══ GREEN HEADER ═══ */}
+          <div className="bg-green px-5 pt-3 pb-4 relative">
+            {/* Status bar */}
+            <div className="flex justify-between items-center text-[9px] text-white/70 mb-3">
+              <span>9:41</span><span>•••</span>
             </div>
-            <div className="flex gap-2">
-              <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center border border-border">
-                <Bell className="w-3.5 h-3.5 text-ink" />
-              </div>
-              <div className="w-8 h-8 bg-gold rounded-full flex items-center justify-center">
-                <span className="text-[10px] font-black text-green">FN</span>
-              </div>
-            </div>
-          </div>
-          {/* Akao card */}
-          <div className="mx-5 mt-3 bg-green rounded-2xl p-4 text-white">
-            <div className="text-[10px] text-gold uppercase tracking-wider">Akao Contributions</div>
-            <div className="text-2xl font-black text-gold mt-1">85,000 <span className="text-xs text-gold/70">XAF</span></div>
-            <div className="flex gap-2 mt-3 pt-3 border-t border-white/10">
-              <div className="flex-1">
-                <div className="text-sm font-bold text-white">2</div>
-                <div className="text-[9px] text-white/60">Active plans</div>
-              </div>
-              <div className="flex-1">
-                <div className="text-sm font-bold text-white">10,000 XAF</div>
-                <div className="text-[9px] text-white/60">Next in 2 days</div>
-              </div>
-            </div>
-          </div>
-          <div className="text-[10px] text-muted px-5 pt-4 pb-2 font-bold uppercase tracking-wider">What would you like to do?</div>
-          <div className="px-5 grid grid-cols-4 gap-2">
-            {[
-              { Icon: ArrowUpRight, label: 'Contribute', bg: 'bg-mint' },
-              { Icon: CalendarDays, label: 'Book', bg: 'bg-[#F1ECFF]' },
-              { Icon: ShoppingBag, label: 'Market', bg: 'bg-coral' },
-              { Icon: GraduationCap, label: 'Fees', bg: 'bg-[#FEF3D7]' },
-            ].map(({ Icon, label, bg }) => (
-              <div key={label} className="bg-white rounded-xl border border-border py-2.5 flex flex-col items-center gap-1">
-                <div className={`w-7 h-7 ${bg} rounded-full flex items-center justify-center`}>
-                  <Icon className="w-3.5 h-3.5 text-green" />
+            {/* Top bar: logo + actions */}
+            <div className="flex justify-between items-center mb-5">
+              <span className="font-display text-xl font-black text-gold">Ékié</span>
+              <div className="flex gap-1.5 items-center">
+                <div className="w-7 h-7 bg-white/10 rounded-full flex items-center justify-center text-[9px] font-bold text-white/85">EN</div>
+                <div className="w-7 h-7 bg-white/10 rounded-full flex items-center justify-center">
+                  <Bell className="w-3 h-3 text-white/85" />
                 </div>
-                <div className="text-[8px] font-bold text-ink">{label}</div>
+                <div className="w-7 h-7 bg-gold rounded-full flex items-center justify-center">
+                  <User className="w-3 h-3 text-green" />
+                </div>
+              </div>
+            </div>
+            {/* Big greeting */}
+            <div className="text-[11px] text-white/70 mb-0.5">Good morning,</div>
+            <div className="font-display text-[26px] font-black text-white leading-tight mb-1">Fabiola</div>
+            <div className="text-[11px] text-white/60 italic mb-4">Your world, cared for.</div>
+            {/* Stats row — inset card */}
+            <div className="bg-white/[0.07] border border-white/10 rounded-xl px-2 py-2.5 flex items-center justify-between">
+              <div className="text-center flex-1">
+                <div className="text-base font-black text-white">3</div>
+                <div className="text-[7.5px] text-white/60 uppercase tracking-wider">People</div>
+              </div>
+              <div className="w-px h-6 bg-white/10" />
+              <div className="text-center flex-1">
+                <div className="text-base font-black text-white">2</div>
+                <div className="text-[7.5px] text-white/60 uppercase tracking-wider">Commitments</div>
+              </div>
+              <div className="w-px h-6 bg-white/10" />
+              <div className="text-center flex-1">
+                <div className="text-base font-black text-white">5</div>
+                <div className="text-[7.5px] text-white/60 uppercase tracking-wider">Activity</div>
+              </div>
+              <ArrowRight className="w-3 h-3 text-white/60 ml-1" />
+            </div>
+          </div>
+
+          {/* ═══ CREAM BODY ═══ */}
+          <div className="flex-1 bg-cream px-5 pt-4 pb-3">
+            {/* Your people */}
+            <div className="flex justify-between items-center mb-3">
+              <h4 className="font-display text-base font-black text-ink">Your people</h4>
+              <span className="text-[10px] text-green font-bold flex items-center gap-0.5">View all <ArrowRight className="w-2.5 h-2.5" /></span>
+            </div>
+            <div className="flex gap-2 mb-4">
+              {[
+                { initial: 'M', label: 'Maman', bg: 'bg-coral', textColor: 'text-[#C2410C]' },
+                { initial: 'J', label: 'Junia', bg: 'bg-[#F1ECFF]', textColor: 'text-[#6D28D9]' },
+                { initial: '+', label: 'Add', bg: 'bg-mint', textColor: 'text-green' },
+              ].map((p) => (
+                <div key={p.label} className="flex-1 bg-white rounded-xl p-2 flex flex-col items-center gap-1 border border-border">
+                  <div className={`w-8 h-8 ${p.bg} rounded-full flex items-center justify-center text-[11px] font-black ${p.textColor}`}>
+                    {p.initial}
+                  </div>
+                  <div className="text-[9px] font-bold text-ink">{p.label}</div>
+                </div>
+              ))}
+            </div>
+            {/* Activity card — green with gold arrow (mirrors real app) */}
+            <div className="bg-green rounded-2xl p-3.5 flex items-center justify-between relative overflow-hidden">
+              <div className="absolute -top-4 -right-4 w-20 h-20 rounded-full bg-gold/10 blur-xl" />
+              <div className="flex-1 relative z-10">
+                <div className="text-[9px] text-gold uppercase tracking-wider font-bold mb-1">Your activity</div>
+                <div className="font-display text-sm font-black text-white leading-tight mb-0.5">See your care<br/>history.</div>
+                <div className="text-[9px] text-white/60 mt-1">Payments, gifts, receipts</div>
+              </div>
+              <div className="w-9 h-9 bg-gold rounded-full flex items-center justify-center flex-shrink-0 ml-2 relative z-10">
+                <ArrowRight className="w-4 h-4 text-green" />
+              </div>
+            </div>
+          </div>
+
+          {/* ═══ BOTTOM NAV ═══ */}
+          <div className="bg-white border-t border-border px-4 pt-2 pb-3 flex justify-around">
+            {[
+              { Icon: Home, label: 'Home', active: true },
+              { Icon: Heart, label: 'Care', active: false },
+              { Icon: CreditCard, label: 'Pay', active: false },
+              { Icon: User, label: 'You', active: false },
+            ].map((nav) => (
+              <div key={nav.label} className="flex flex-col items-center gap-0.5">
+                <div className={`w-8 h-8 rounded-full flex items-center justify-center ${nav.active ? 'bg-mint' : ''}`}>
+                  <nav.Icon className={`w-3.5 h-3.5 ${nav.active ? 'text-green' : 'text-ink/40'}`} />
+                </div>
+                <div className={`text-[8px] font-bold ${nav.active ? 'text-green' : 'text-ink/40'}`}>{nav.label}</div>
               </div>
             ))}
           </div>
-          <div className="text-[10px] text-muted px-5 pt-4 pb-2 font-bold uppercase tracking-wider">Discover near you</div>
-          <div className="px-5 grid grid-cols-2 gap-2">
-            {[
-              { emoji: '💇🏽‍♀️', label: 'Hair & Beauty', sub: '25+ salons' },
-              { emoji: '🍰', label: 'Bakeries', sub: 'Fresh & local' },
-            ].map(({ emoji, label, sub }) => (
-              <div key={label} className="bg-white rounded-xl p-2.5 border border-border flex items-center gap-2">
-                <div className="text-xl">{emoji}</div>
-                <div>
-                  <div className="text-[10px] font-bold text-ink">{label}</div>
-                  <div className="text-[8px] text-muted">{sub}</div>
-                </div>
-              </div>
-            ))}
-          </div>
+
         </div>
       </div>
     </div>

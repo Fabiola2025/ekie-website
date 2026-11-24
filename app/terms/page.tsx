@@ -42,7 +42,7 @@ export default function TermsPage() {
       <p><strong>Vendors and schools.</strong> Vendors, service providers, and school partners are also subject to a separate Vendor Agreement or School Partnership Agreement at onboarding, which covers business-specific terms including payout schedules, service levels, and data handling in the vendor and school portals.</p>
 
       <h2>6. Payments and fees</h2>
-      <p>Payments are processed by <strong>CinetPay</strong> (for mobile money in Cameroon &mdash; <strong>MTN Mobile Money</strong> and <strong>Orange Money</strong>), <strong>dLocal</strong>, and <strong>Kora</strong> (for international card payments and cross-border payouts). Ékié&apos;s own fees are disclosed at checkout and on our pricing page.</p>
+      <p>Payments are processed by <strong>CinetPay</strong> for mobile money in Cameroon (<strong>MTN Mobile Money</strong> and <strong>Orange Money</strong>). International card payments and cross-border payouts are processed through additional licensed payment partners regulated under their respective jurisdictions; these partners are listed in our Privacy Policy and may change as the service expands. Ékié&apos;s own fees are disclosed at checkout and on our pricing page.</p>
       <p>Refunds depend on the vendor&apos;s or provider&apos;s refund policy. For disputes, see §9.</p>
 
       <h2>7. Acceptable use</h2>
@@ -80,7 +80,7 @@ export default function TermsPage() {
       <p><strong>We are not liable for:</strong></p>
       <ul>
         <li>Fraud, non-delivery, misconduct or quality issues attributable to vendors, service providers, schools, or other users</li>
-        <li>Failure, malfunction or delay of mobile networks, SMS gateways, internet connectivity, or third-party payment processors (including CinetPay, dLocal, Kora and others)</li>
+        <li>Failure, malfunction or delay of mobile networks, SMS gateways, internet connectivity, or third-party payment processors (including CinetPay and any additional licensed payment partners used by the service)</li>
         <li>Losses arising from you sharing your PIN, biometric, phone, device or login credentials with any person</li>
         <li>Force majeure events (natural disasters, strikes, pandemics, government action, war)</li>
         <li>Regulatory changes outside Ékié&apos;s control</li>
@@ -139,7 +139,7 @@ export default function TermsPage() {
       <p><strong>Commerçants et écoles.</strong> Les commerçants, prestataires de services et partenaires scolaires sont également soumis à un Contrat Commerçant ou à un Accord de Partenariat Scolaire distinct lors de l&apos;intégration, qui couvre les conditions commerciales spécifiques, y compris les calendriers de versement, les niveaux de service et le traitement des données dans les portails des commerçants et des écoles.</p>
 
       <h2>6. Paiements et frais</h2>
-      <p>Les paiements sont traités par <strong>CinetPay</strong> (pour le mobile money au Cameroun &mdash; <strong>MTN Mobile Money</strong> et <strong>Orange Money</strong>), <strong>dLocal</strong>, et <strong>Kora</strong> (pour les paiements internationaux par carte et les versements transfrontaliers). Les frais propres à Ékié sont divulgués lors du paiement et sur notre page de tarification.</p>
+      <p>Les paiements sont traités par <strong>CinetPay</strong> pour le mobile money au Cameroun (<strong>MTN Mobile Money</strong> et <strong>Orange Money</strong>). Les paiements internationaux par carte et les versements transfrontaliers sont traités via d&apos;autres partenaires de paiement agréés et régulés dans leurs juridictions respectives ; ces partenaires sont listés dans notre Politique de confidentialité et peuvent changer à mesure que le service se développe. Les frais propres à Ékié sont divulgués lors du paiement et sur notre page de tarification.</p>
       <p>Les remboursements dépendent de la politique de remboursement du commerçant ou du prestataire. Pour les litiges, voir §9.</p>
 
       <h2>7. Utilisation acceptable</h2>
@@ -177,7 +177,7 @@ export default function TermsPage() {
       <p><strong>Nous ne sommes pas responsables de :</strong></p>
       <ul>
         <li>Fraude, non-livraison, inconduite ou problèmes de qualité imputables aux commerçants, prestataires de services, écoles ou autres utilisateurs</li>
-        <li>Défaillance, dysfonctionnement ou retard des réseaux mobiles, des passerelles SMS, de la connectivité Internet ou des processeurs de paiement tiers (y compris CinetPay, dLocal, Kora et autres)</li>
+        <li>Défaillance, dysfonctionnement ou retard des réseaux mobiles, des passerelles SMS, de la connectivité Internet ou des processeurs de paiement tiers (y compris CinetPay et tout autre partenaire de paiement agréé utilisé par le service)</li>
         <li>Pertes résultant du partage de votre PIN, biométrie, téléphone, appareil ou identifiants de connexion avec toute personne</li>
         <li>Événements de force majeure (catastrophes naturelles, grèves, pandémies, action gouvernementale, guerre)</li>
         <li>Changements réglementaires hors du contrôle d&apos;Ékié</li>

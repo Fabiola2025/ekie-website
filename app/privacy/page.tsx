@@ -63,7 +63,8 @@ export default function PrivacyPage() {
       <h2>4. Who we share with</h2>
       <p>We do not sell your personal data. We share with:</p>
       <ul>
-        <li><strong>Payment processors</strong>: CinetPay (for mobile money in Cameroon &mdash; MTN Mobile Money and Orange Money), dLocal, and Kora (for international card payments and cross-border payouts). They collect, process and settle your transactions on our behalf.</li>
+        <li><strong>Payment processors</strong>: CinetPay (for mobile money in Cameroon &mdash; MTN Mobile Money and Orange Money). Additional licensed payment partners may be engaged for international card payments and cross-border payouts as the service expands; we will update this policy to name them before processing your data through them.</li>
+        <li><strong>Communications providers</strong>: Africa&apos;s Talking (a Kenya-registered SMS aggregator) for SMS notifications, OTP delivery, and vendor alerts. Amazon Simple Email Service (AWS SES) for transactional email (account confirmations, OTP codes, receipts).</li>
         <li><strong>Service providers and vendors you transact with</strong>: limited to what they need to fulfil your request. For example, a school receives your child&apos;s student ID when you pay school fees; a vendor sees your pickup code.</li>
         <li><strong>Care Circle members</strong>: when you join a Circle, other members can see what you contribute to that Circle.</li>
         <li><strong>Infrastructure providers</strong>: Amazon Web Services (eu-west-1, Europe) hosts our servers; your data stays in the EU region.</li>
@@ -180,7 +181,8 @@ export default function PrivacyPage() {
       <h2>4. Avec qui nous partageons</h2>
       <p>Nous ne vendons pas vos données personnelles. Nous partageons avec :</p>
       <ul>
-        <li><strong>Processeurs de paiement</strong> : CinetPay (pour le mobile money au Cameroun &mdash; MTN Mobile Money et Orange Money), dLocal, et Kora (pour les paiements internationaux par carte et les versements transfrontaliers). Ils collectent, traitent et règlent vos transactions en notre nom.</li>
+        <li><strong>Processeurs de paiement</strong> : CinetPay (pour le mobile money au Cameroun &mdash; MTN Mobile Money et Orange Money). D&apos;autres partenaires de paiement agréés peuvent être engagés pour les paiements internationaux par carte et les versements transfrontaliers à mesure que le service se développe ; nous mettrons à jour cette politique pour les nommer avant de traiter vos données par leur intermédiaire.</li>
+        <li><strong>Fournisseurs de communication</strong> : Africa&apos;s Talking (agrégateur SMS enregistré au Kenya) pour les notifications SMS, la livraison des codes OTP et les alertes commerçants. Amazon Simple Email Service (AWS SES) pour les e-mails transactionnels (confirmations de compte, codes OTP, reçus).</li>
         <li><strong>Prestataires de services et commerçants avec qui vous effectuez des transactions</strong> : limité à ce dont ils ont besoin pour satisfaire votre demande. Par exemple, une école reçoit l&apos;identifiant d&apos;étudiant de votre enfant lorsque vous payez les frais de scolarité ; un commerçant voit votre code de retrait.</li>
         <li><strong>Membres du Cercle de Soin</strong> : lorsque vous rejoignez un Cercle, les autres membres peuvent voir ce que vous contribuez à ce Cercle.</li>
         <li><strong>Fournisseurs d&apos;infrastructure</strong> : Amazon Web Services (eu-west-1, Europe) héberge nos serveurs ; vos données restent dans la région UE.</li>
